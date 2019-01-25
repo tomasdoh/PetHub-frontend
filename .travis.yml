@@ -7,3 +7,12 @@ cache:
 script:
   - npm run build
   - npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: dSlkyrks/hVhDirzt68fxdMVShTEsCMTC8AQ/25KsSOa4NbTkG5ENJYStvyc7RhUc4ToiLZFsMJgMhdVFbnkmRbAbwUdmP3DyAXRlxXaPAcbI4k3FRrIbMBazdPlpWYWnhxYUDZBx6v5+1Fug1/Ns4+A4WengCetBRnrgeICWiXuRMgo1JceU8M8HoRbs01PnsZO9PngFgCQGEsrai5LErJUxetB8Fwzb3cbIG0q9EEwHH4XcY+K/viqtlN/7E09UiPYhbFPd9QShaUgRftZu3j7wK5nycus1a7EWOPQTQpghV6lh0xhHmNVp0Nt/xPXmVnCwLChHE5ee6NjzwyewCbtnNlsAshZpE14VkJZqnRv7stQ51em0Qld3+jkEg+t8FntOsmdXPcdrHkL6/cOqlgfroT9V4w+RXM0AUw1XpgSw7nN5Kkk9kkbq9R+7NxEAFOw4CAhQWFr09b9Piq38rXpyXyCOjoDBDLzPIokYZoSJ6Ux75F5COGB/G7ztZhQUIAIqj/paU2efvLF/5A4M3fHldFAQAfpFlyMBowRvgtKzHj7gHY58/aR1BfjCpX9J060g6u8h7ISKEfS5LDYO5zEjI1vR5XAKlk+bWijSvjhM6k8nTAEc3SB/9Fu3XWJ2YOOMFeHGUrNYBvDu7OoRGPBCW1d2Gm9Fzc83Jd+UKU=
+  app: pet-hub
+  on:
+    repo: tomasdoh/PetHub-frontend
+    branch: master
+  skip_cleanup: true
