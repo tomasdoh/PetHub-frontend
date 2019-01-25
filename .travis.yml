@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-  - 8
+- 8
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm run build
-  - npm test
+- npm run build
+- npm test
 deploy:
   provider: heroku
   api_key:
-    secure: dSlkyrks/hVhDirzt68fxdMVShTEsCMTC8AQ/25KsSOa4NbTkG5ENJYStvyc7RhUc4ToiLZFsMJgMhdVFbnkmRbAbwUdmP3DyAXRlxXaPAcbI4k3FRrIbMBazdPlpWYWnhxYUDZBx6v5+1Fug1/Ns4+A4WengCetBRnrgeICWiXuRMgo1JceU8M8HoRbs01PnsZO9PngFgCQGEsrai5LErJUxetB8Fwzb3cbIG0q9EEwHH4XcY+K/viqtlN/7E09UiPYhbFPd9QShaUgRftZu3j7wK5nycus1a7EWOPQTQpghV6lh0xhHmNVp0Nt/xPXmVnCwLChHE5ee6NjzwyewCbtnNlsAshZpE14VkJZqnRv7stQ51em0Qld3+jkEg+t8FntOsmdXPcdrHkL6/cOqlgfroT9V4w+RXM0AUw1XpgSw7nN5Kkk9kkbq9R+7NxEAFOw4CAhQWFr09b9Piq38rXpyXyCOjoDBDLzPIokYZoSJ6Ux75F5COGB/G7ztZhQUIAIqj/paU2efvLF/5A4M3fHldFAQAfpFlyMBowRvgtKzHj7gHY58/aR1BfjCpX9J060g6u8h7ISKEfS5LDYO5zEjI1vR5XAKlk+bWijSvjhM6k8nTAEc3SB/9Fu3XWJ2YOOMFeHGUrNYBvDu7OoRGPBCW1d2Gm9Fzc83Jd+UKU=
+    secure: lcGoihBtX1wtcPSnsjb4QfYvoWrFex/mS3KBLtx1A/6vWobWdwt/Yr+pNnwN70T7TSrrSG7SOTS0jK6p1gzDRqi1v82xLmNfEWf0b6KsR40zlG2GDdH5wme9pgs7t9tGqT8u7wSayWPHKjBQ8aJbIgbY2pOAe0ghFwRd+9TnFaT/XnIjcBfbSdgj5nfED7K/4GtSqm7DcDVmMUcKLSQ/YAbTuxnQr8b0PSar+aH+DiuzYt5CeyQtT8s28Vipz6wYAhHk6HgyEUJuVLeutMgo5wUG29sDgoM9T3yM+EMCjpjN7xgLrTMDaj5BuzJ9xowLt+xN6vilg64/iBB3hAyNZH+mccFCf+NqsJDloHmpH7IfxBFTeyEUMmzO06doRrWA8YhvqNQmB6b92YADAg0OzdiLTXBtT1JggSK4aZFZdSaGGz2HeqwblzpoJIF7JInPkfrahEo0RX/wjyWA0lpY+wkxswMqKYgqiYnmAzhQNLqUUaxY7mzW820Ng14EBef9BPEUHP7cCEjhza7YD1ncjpGp4HvghtmW2nTP+mpAZyPLlg3H15p6hk9Cp4CDqhpmzTHafZd4GVLELomdf1zYXaSXBYx9gTJSHC9d8uesPoLPcrjaGqO3ylrhcT1SuYcGVAtN1rgt0pm4d64r4+MezdxSbeBV70N+tV2M9ZijwSE=
   app: pet-hub
   on:
     repo: tomasdoh/PetHub-frontend
