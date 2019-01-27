@@ -13,7 +13,7 @@ class PetsForm extends Component {
     event.preventDefault();
     const data = new FormData(event.target);
 
-    fetch('/pets', {
+    fetch(URL + '/pets', {
       method: "POST",
       header: HEADERS,
       body: data
