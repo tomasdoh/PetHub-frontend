@@ -14,6 +14,7 @@ code {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400');
 
 * {
     box-sizing: border-box;
@@ -45,8 +46,8 @@ body {
 
 .menu {
     background-color: #ffffff;
-    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+    /* box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15); */
+    /* border-radius: 8px; */
     width: 500px;
     height: 80px;
     display: flex;
@@ -154,22 +155,30 @@ body {
 
 .ui.container.menu .menu_home {
   background-color: #c23054 !important;
+  font-family: 'Raleway';
+  font-weight: 300;
 }
 
 .ui.container.menu .menu_lost_and_found {
   background-color: #8cc737 !important;
+  font-family: 'Raleway';
+  font-weight: 300;
 }
 
 .ui.container.menu .menu_missing_pets {
   background-color: #e8673a !important;
+  font-family: 'Raleway';
+  font-weight: 300;
 }
 
 .ui.container.menu .menu_register {
   background-color: #42a1b1 !important;
+  font-family: 'Raleway';
 }
 
 .ui.container.menu .menu_login {
   background-color: #f0d247 !important;
+  font-family: 'Raleway';
 }
 
 i.home.icon {
@@ -193,5 +202,11 @@ i.sign-in.icon {
 }
 
 .pet-form {
-  padding: 20px;
+  padding-top: 30px;
+}
+
+.form-title {
+  padding-bottom: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
 }

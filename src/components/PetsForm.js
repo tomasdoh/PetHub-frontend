@@ -25,7 +25,7 @@ class PetsForm extends Component {
   render() {
     return (
       <Container className='App pet-form'>
-        <h1>Enter your pet information</h1>
+        <h1 className='form-title'>Enter your pet information</h1>
         <Form onSubmit={this.handleSubmit} className="form">
           <Row form>
             <Col>
