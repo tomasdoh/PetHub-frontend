@@ -22,9 +22,6 @@ const { activeItem } = this.state;
 
 return (
     <Container className='menu'>
-        <Menu.Item className='menu__link menu_logo'>
-          PetHub
-        </Menu.Item>
         <Menu.Item className='menu__link menu_home'
           as={NavLink}
           to="/"

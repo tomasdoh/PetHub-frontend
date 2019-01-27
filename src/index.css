@@ -153,7 +153,7 @@ body {
 }
 
 .ui.container.menu .menu_home {
-  background-color: red !important;
+  background-color: #E64131 !important;
 }
 
 .ui.container.menu .menu_lost_and_found {
@@ -165,9 +165,9 @@ body {
 }
 
 .ui.container.menu .menu_register {
-  background-color: green !important;
+  background-color: #E64131 !important;
 }
 
 .ui.container.menu .menu_login {
-  background-color: pink !important;
+  background-color: green !important;
 }
