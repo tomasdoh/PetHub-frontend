@@ -1,5 +1,5 @@
 import React from 'react';
-import { API_ROOT, HEADERS } from '../../constants';
+import { URL, HEADERS } from '../../constants';
 
 class NewConversationForm extends React.Component {
   state = {
@@ -12,7 +12,7 @@ class NewConversationForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    fetch(`${API_ROOT}/conversations`, {
+    fetch(`${URL}/conversations`, {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify(this.state)
