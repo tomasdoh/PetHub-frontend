@@ -35,7 +35,7 @@ return (
           <Icon name="home"/>Home
         </Menu.Item>
         <Menu.Item
-          className='menu__link'
+          className='menu__link menu_lost_and_found'
           as={NavLink}
           to="/pets"
           name='allPets'
@@ -44,7 +44,7 @@ return (
           <Icon name="paw"/>View lost and found pets
         </Menu.Item>
         <Menu.Item
-          className='menu__link'
+          className='menu__link menu_missing_pets'
           as={NavLink}
           to="/pets/create"
           name='newPets'
@@ -53,7 +53,7 @@ return (
           <Icon name="home"/>Report your missing pet
         </Menu.Item>
         <Menu.Item
-          className='menu__link'
+          className='menu__link menu_register'
           as={NavLink}
           to="/users/new"
           name='register'
@@ -62,7 +62,7 @@ return (
           <Icon name="pencil"/>Register
         </Menu.Item>
         <Menu.Item
-          className='menu__link'
+          className='menu__link menu_login'
           as={NavLink}
           to="/login"
           name='login'

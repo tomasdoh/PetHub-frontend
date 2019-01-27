@@ -141,9 +141,19 @@ body {
 }
 
 .App {
-  background-color: red;
+  background-color: white;
 }
 
 .ui.container.menu {
-  width: 900px;
+  width: 880px;
+  padding: 0px;
+}
+
+.ui.container.menu .menu_logo {
+  background-color: green;
+  padding-top: 0px;
+}
+
+.ui.container.menu .menu_home {
+  background: red;
 }
