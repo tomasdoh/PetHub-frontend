@@ -42,7 +42,7 @@ return (
           to="/pets/create"
           name='newPets'
           onClick={this.handleItemClick}>
-          <Icon name="home"/>Report your missing pet
+          <Icon name="edit outline"/>Report your missing pet
         </Menu.Item>
         <Menu.Item className='menu__link menu_register'
           as={NavLink}
