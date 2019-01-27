@@ -25,8 +25,7 @@ return (
         <Menu.Item className='menu__link menu_logo'>
           PetHub
         </Menu.Item>
-        <Menu.Item
-          className='menu__link menu_home'
+        <Menu.Item className='menu__link menu_home'
           as={NavLink}
           to="/"
           name='home'
@@ -34,39 +33,31 @@ return (
           onClick={this.handleItemClick}>
           <Icon name="home"/>Home
         </Menu.Item>
-        <Menu.Item
-          className='menu__link menu_lost_and_found'
+        <Menu.Item className='menu__link menu_lost_and_found'
           as={NavLink}
           to="/pets"
           name='allPets'
-          active={activeItem === 'allPets'}
           onClick={this.handleItemClick}>
           <Icon name="paw"/>View lost and found pets
         </Menu.Item>
-        <Menu.Item
-          className='menu__link menu_missing_pets'
+        <Menu.Item className='menu__link menu_missing_pets'
           as={NavLink}
           to="/pets/create"
           name='newPets'
-          active={activeItem === 'newPets'}
           onClick={this.handleItemClick}>
           <Icon name="home"/>Report your missing pet
         </Menu.Item>
-        <Menu.Item
-          className='menu__link menu_register'
+        <Menu.Item className='menu__link menu_register'
           as={NavLink}
           to="/users/new"
           name='register'
-          active={activeItem === 'register'}
           onClick={this.handleItemClick}>
           <Icon name="pencil"/>Register
         </Menu.Item>
-        <Menu.Item
-          className='menu__link menu_login'
+        <Menu.Item className='menu__link menu_login'
           as={NavLink}
           to="/login"
           name='login'
-          active={activeItem === 'login'}
           onClick={this.handleItemClick}>
           <Icon name="sign-in"/>Login
         </Menu.Item>

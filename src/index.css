@@ -44,7 +44,7 @@ body {
 }
 
 .menu {
-    background-color: blue !important;
+    background-color: #ffffff;
     box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     width: 500px;
@@ -88,16 +88,16 @@ body {
     align-items: center;
     padding: 0 3px;
 }
-
+/*
 .menu__link:hover {
     color: #ffaa3b;
-}
+} */
 
-.menu__link--active {
+/* .menu__link--active {
     color: #ffaa3b;
     border-top: 4px solid #ffaa3b;
     font-weight: 700;
-}
+} */
 
 .menu__logo {
     text-indent: -9999999px;
@@ -140,20 +140,34 @@ body {
     font-weight: 300;
 }
 
-.App {
-  background-color: white;
-}
-
 .ui.container.menu {
   width: 880px;
   padding: 0px;
 }
 
+.ui.menu .active.item {
+}
+
 .ui.container.menu .menu_logo {
-  background-color: green;
   padding-top: 0px;
 }
 
 .ui.container.menu .menu_home {
-  background: red;
+  background-color: red !important;
+}
+
+.ui.container.menu .menu_lost_and_found {
+  background-color: orange !important;
+}
+
+.ui.container.menu .menu_missing_pets {
+  background-color: yellow !important;
+}
+
+.ui.container.menu .menu_register {
+  background-color: green !important;
+}
+
+.ui.container.menu .menu_login {
+  background-color: pink !important;
 }
