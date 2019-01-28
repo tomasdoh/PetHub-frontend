@@ -21,7 +21,7 @@ render() {
 const { activeItem } = this.state;
 
 return (
-    <Container className='menu'>
+    <Container className='menu borderless'>
         <Menu.Item className='menu__link menu_home'
           as={NavLink}
           to="/"

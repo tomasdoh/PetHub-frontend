@@ -29,30 +29,30 @@ class PetsForm extends Component {
         <Form onSubmit={this.handleSubmit} className="form">
           <Row form>
             <Col>
-              <FormGroup>
-                <Label for="name">Name</Label>
+              <FormGroup className='form-container'>
+                <Label className='form-text' for="name">Name</Label>
                 <Input type="text" name="name" id="name" placeholder="Pet name" />
               </FormGroup>
             </Col>
             <Col>
-              <FormGroup>
-                <Label for="owner">Owner</Label>
+              <FormGroup className='form-container'>
+                <Label className='form-text' for="owner">Owner</Label>
                 <Input type="text" name="owner" id="owner" placeholder="Your name" />
               </FormGroup>
             </Col>
           </Row>
-          <FormGroup>
-            <Label for="description">Description</Label>
+          <FormGroup className='form-container'>
+            <Label className='form-text' for="description">Description</Label>
             <Input type="textarea" name="description" id="description" placeholder="Describe the pet"/>
           </FormGroup>
-          <FormGroup>
-            <Label for="exampleFile">Picture</Label>
+          <FormGroup className='form-container'>
+            <Label className='form-text' for="exampleFile">Picture</Label>
             <Input type="file" name="file" id="exampleFile" />
             <FormText color="muted">
             </FormText>
           </FormGroup>
-          <FormGroup>
-            <Label for="exampleSelect">Status</Label>
+          <FormGroup className='form-container'>
+            <Label className='form-text' for="exampleSelect">Status</Label>
             <Input type="select" name="tag" id="exampleTag">
               <option>Lost</option>
               <option>Found</option>
@@ -60,12 +60,12 @@ class PetsForm extends Component {
             </Input>
           </FormGroup>
 
-          <FormGroup>
-            <Label for="location">Last Seen Location</Label>
+          <FormGroup className='form-container'>
+            <Label className='form-text' for="location">Last Seen Location</Label>
             <GeoAutoComplete />
           </FormGroup>
 
-          <Button color="dark" style={{marginTop: '2rem'}} block>Report</Button>
+          <Button className='form-button' color="dark" style={{marginTop: '2rem'}} block>Report</Button>
         </Form>
       </Container>
     );
