@@ -222,5 +222,9 @@ i.sign-in.icon {
 }
 
 .form-button {
-  padding-top: 30px;
+  margin-top: 50px;
+}
+
+.form Button {
+  background-color: #42a1b1;
 }

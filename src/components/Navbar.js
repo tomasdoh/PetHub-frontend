@@ -56,7 +56,7 @@ return (
           to="/login"
           name='login'
           onClick={this.handleItemClick}>
-          <Icon name="sign-in"/>Welcome back
+          <Icon name="sign-in"/>Hey! Welcome back
         </Menu.Item>
     </Container>
     )
