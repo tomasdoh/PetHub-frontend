@@ -38,23 +38,23 @@ class PetsForm extends Component {
             <Col>
               <FormGroup>
                 <Label for="owner">Owner</Label>
-                <Input type="text" name="owner" id="owner" placeholder="Your name" />
+                <Input type="text" autoFocus className='form-owner' name="owner" id="owner" placeholder="Your name" />
               </FormGroup>
             </Col>
           </Row>
           <FormGroup>
             <Label for="description">Description</Label>
-            <Input type="textarea" name="description" id="description" placeholder="Describe the pet"/>
+            <Input type="textarea" autoFocus className='form-description' name="description" id="description" placeholder="Describe the pet"/>
           </FormGroup>
           <FormGroup>
             <Label for="exampleFile">Picture</Label>
-            <Input type="file" name="file" id="exampleFile" />
+            <Input type="file" autoFocus className='form-picture' name="file" id="exampleFile" />
             <FormText color="muted">
             </FormText>
           </FormGroup>
           <FormGroup>
             <Label for="exampleSelect">Status</Label>
-            <Input type="select" name="tag" id="exampleTag">
+            <Input type="select" autoFocus className='form-status' name="tag" id="exampleTag">
               <option>Lost</option>
               <option>Found</option>
               <option>Reunited</option>
