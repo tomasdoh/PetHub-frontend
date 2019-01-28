@@ -1,4 +1,4 @@
-# PetHub 🐾 [![Build Status](https://travis-ci.com/githubsttar/PetHub-frontend.svg?branch=master)](https://travis-ci.com/githubsttar/PetHub-frontend)
+# PetHub 🐾 [![Build Status](https://travis-ci.com/tomasdoh/PetHub-frontend.svg?branch=master)](https://travis-ci.com/tomasdoh/PetHub-frontend)
 
 ### [Team](https://github.com/githubsttar/PetHub-frontend#team) |  [User stories](https://github.com/githubsttar/PetHub-frontend#user-stories) |  [Getting started](https://github.com/githubsttar/PetHub-frontend#getting-started) |  [How to use](https://github.com/githubsttar/PetHub-frontend#how-to-use-pethub) | [Our approach](https://github.com/githubsttar/PetHub-frontend#our-approach) |   [Testing](https://github.com/githubsttar/PetHub-frontend#testing) |   [Deployment](https://github.com/githubsttar/PetHub-frontend#deployment) |  [Contributing](https://github.com/githubsttar/PetHub-frontend#contributing)
 
