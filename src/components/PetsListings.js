@@ -44,17 +44,16 @@ class PetsListings extends Component {
 
   render () {
    let {pets, pet} = this.state;
-     return pet
+     return pets
        ? <Container text>
            <Divider hidden section />
            {pets && pets.length
              ? <Card.Group itemsPerRow={2}>
                {Object.keys(pets).map((key) => {
                  return <Card
-                 active={pet && pet.id === pets[key].id}
                  fluid key={key}
                  onClick={() => this.routeChange(pets[key].id)}
-                 image="http://lorempixel.com/400/400/animals"
+                 image={pets[key].picture}
                  header={pets[key].name}
                  description={pets[key].description}
                  meta={pets[key].tag}
