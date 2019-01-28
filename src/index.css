@@ -143,11 +143,12 @@ body {
 }
 
 .ui.container.menu {
-  width: 790px;
+  /* width: 790px; */
   padding: 0px;
 }
 
 .ui.menu .active.item {
+  width: 250px;
 }
 
 .ui.container.menu .menu_logo {

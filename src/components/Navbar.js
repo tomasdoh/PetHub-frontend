@@ -35,28 +35,28 @@ return (
           to="/pets"
           name='allPets'
           onClick={this.handleItemClick}>
-          <Icon name="paw"/>View lost and found pets
+          <Icon name="paw"/>Lost and found pets
         </Menu.Item>
         <Menu.Item className='menu__link menu_missing_pets'
           as={NavLink}
           to="/pets/create"
           name='newPets'
           onClick={this.handleItemClick}>
-          <Icon name="edit outline"/>Report your missing pet
+          <Icon name="edit outline"/>Report missing pet
         </Menu.Item>
         <Menu.Item className='menu__link menu_register'
           as={NavLink}
           to="/users/new"
           name='register'
           onClick={this.handleItemClick}>
-          <Icon name="pencil"/>Register
+          <Icon name="pencil"/>Join the community
         </Menu.Item>
         <Menu.Item className='menu__link menu_login'
           as={NavLink}
           to="/login"
           name='login'
           onClick={this.handleItemClick}>
-          <Icon name="sign-in"/>Login
+          <Icon name="sign-in"/>Welcome back
         </Menu.Item>
     </Container>
     )
