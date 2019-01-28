@@ -39,24 +39,18 @@ class Pet extends Component {
           {pet.name}
           </Header.Content>
         </Header>
-
+        <h3>{pet.description}</h3>
         <Image
         centered
         size='medium'
-        src="http://lorempixel.com/400/400/animals" />
-
+        src={pet.picture} />
         <Iframe url={embedUrl + encodeURI(pet.location)}
         width="450px"
         height="450px"
         display="initial"
         position="relative"
         allowFullScreen />
-
-        <h2>{pet.description}</h2>
-
-        <h3>Owned by {pet.owner} </h3>
       </div>
-
     : <div>
         <p> No pets :( </p>
       </div>

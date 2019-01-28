@@ -44,7 +44,7 @@ class Filter extends Component {
 
   render () {
     let {pets, pet} = this.state;
-     return pets
+     return pet
        ? <Container text>
            <Divider hidden section />
            {pets && pets.length
@@ -54,6 +54,7 @@ class Filter extends Component {
                   fluid key={key}
                   header={pets[key].name}
                   description={pets[key].description}
+                  image={pets[key].picture}
                   meta={pets[key].tag}
                   />
             })}

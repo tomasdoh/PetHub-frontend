@@ -50,7 +50,7 @@ class PetsForm extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="exampleFile">Picture</Label>
-            <Input type="file" name="file" id="exampleFile" />
+            <Input type="file" name="picture" id="picture" />
             <FormText color="muted">
             </FormText>
           </FormGroup>

@@ -53,10 +53,9 @@ class PetsListings extends Component {
              ? <Card.Group itemsPerRow={2}>
                {Object.keys(pets).map((key) => {
                  return <Card
-                 active={pet && pet.id === pets[key].id}
                  fluid key={key}
                  onClick={() => this.routeChange(pets[key].id)}
-                 image="http://lorempixel.com/400/400/animals"
+                 image={pets[key].picture}
                  header={pets[key].name}
                  description={pets[key].description}
                  meta={pets[key].tag}
