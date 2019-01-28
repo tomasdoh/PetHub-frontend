@@ -44,7 +44,7 @@ class PetsListings extends Component {
 
   render () {
    let {pets, pet} = this.state;
-     return pets
+     return pet
        ? <Container text>
            <Divider hidden section />
            {pets && pets.length
