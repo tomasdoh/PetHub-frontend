@@ -38,6 +38,7 @@ To launch the API on port 3001:
 ```
 cd PetHub-backend
 bundle install
+rails db:create db:migrate
 bin/rails server -p 3001
 ```
 To launch the client on port 3000:
@@ -46,7 +47,12 @@ cd PetHub-frontend
 npm install
 npm start
 ```
-In order to get the app to work locally, you may need to change the configuration of the URLs used for API requests. Head to `PetHub-frontend/src/constants/index.js` to check that the local URLs are being used for fetch requests.
+In order to get the app to work locally, you may need to change the configuration of the URLs used for API requests. Head to `PetHub-frontend/src/constants/index.js` to check that the local URLs are being used for fetch requests.  
+To optimize the use of Google Map API for geolocation, open the `.env` file and replace with your Google API key. Enable the following in your API setting:
+- Geolocation API
+- Geocoding API
+- Maps JavaScript API
+- Places API
 
 ## How to use PetHub 🦄
 
