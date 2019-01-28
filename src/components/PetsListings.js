@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { URL } from '../constants/index'
 
 class PetsListings extends Component {
   constructor() {
@@ -26,7 +27,7 @@ class PetsListings extends Component {
   }
 
   getPets() {
-    this.fetch('/pets')
+    this.fetch(URL + '/pets')
       .then(pets => {
         if (pets.length) {
           this.setState({pets: pets});
@@ -38,8 +39,9 @@ class PetsListings extends Component {
   }
 
   getPet(id) {
-    this.fetch(`/pets/${id}`)
-      .then(pet => this.setState({pet: pet}))
+    this.fetch(URL +`/pets/${id}`, {
+    })
+    .then(pet => this.setState({pet: pet}))
   }
 
   render () {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, Container, FormText } from 'reactstrap';
 import GeoAutoComplete from './GeoAutoComplete'
+import { URL, HEADERS } from '../constants/index'
 
 class PetsForm extends Component {
   constructor() {
@@ -12,9 +13,10 @@ class PetsForm extends Component {
     event.preventDefault();
     const data = new FormData(event.target);
 
-    fetch('/pets', {
-      method: 'POST',
-      body: data,
+    fetch(URL + '/pets', {
+      method: "POST",
+      header: HEADERS,
+      body: data
     }).then(
       (response) => response.json().then(
         (json) => this.props.history.push('/pets/' + json.id)
