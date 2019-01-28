@@ -2,12 +2,12 @@
 
 ### [Team](https://github.com/githubsttar/PetHub-frontend#team) |  [User stories](https://github.com/githubsttar/PetHub-frontend#user-stories) |  [Getting started](https://github.com/githubsttar/PetHub-frontend#getting-started) |  [How to use](https://github.com/githubsttar/PetHub-frontend#how-to-use-pethub) | [Our approach](https://github.com/githubsttar/PetHub-frontend#our-approach) |   [Testing](https://github.com/githubsttar/PetHub-frontend#testing) |   [Deployment](https://github.com/githubsttar/PetHub-frontend#deployment) |  [Contributing](https://github.com/githubsttar/PetHub-frontend#contributing)
 
-PetHub is an application that helps reunite lost pets with their owners, built using a Ruby on Rails API and a React.js frontend.
+PetHub is an application that helps reunite lost pets with their owners, built using a Rails API and a React.js frontend.
 
 Live site: http://pet-hub.heroku-app.com 🐕🐩🐈🐴
 API: http://pet-hub-api.heroku-app.com 🐍🐠🦜🐇
 
-Back-end repo (Ruby on Rails API): http://github.com/tomasdoh/PetHub-backend
+Back-end repo (Rails API): http://github.com/tomasdoh/PetHub-backend
 
 ## Team 🐕
 
@@ -16,13 +16,23 @@ Back-end repo (Ruby on Rails API): http://github.com/tomasdoh/PetHub-backend
 * [Luisa Theodoro Paoliello](https://github.com/luisatheodoro)
 * [Tomas Doherty](https://github.com/tomasdoh)
 
+## Features
+
+* Creating, showing, updating and deleting listings for lost and found pets
+* Communicating with the PetHub API via JSON, persisting the data in a PostgreSQL database
+* User authentication using JWT tokens *In development*
+* Images can be uploaded for each listing, stored using Active Storage and Amazon S3.
+* Integration with Google Maps Places, Geocoding and Javascript APIs for form autofill and embedded maps 
+* Chat room feature using Websockets and Action Cable
+* Email/text message alerts *In development*
+
 ## User stories 🐈
 
 Read all of the user stories [here](https://github.com/githubsttar/PetHub-backend/user-stories.md)
 
 ## Getting started 🐠
 
-To run the application and test suites locally, clone this repo for the client **and** clone the [back-end repo](https://github.com/tomasdoh/PetHub-backend) for the application's API.
+To run the application and test suites locally, clone this repo **and** clone the [back-end repo](https://github.com/tomasdoh/PetHub-backend) for the application's API.
 
 To launch the API on port 3001:
 ```
@@ -44,20 +54,35 @@ In order to get the app to work locally, you may need to change the configuratio
 
 ## Our approach 🦜
 
+*2 day sprints and tracking our learning via a wiki*
+
 ## Testing 🐴
 
-To run the API tests:
+We used [RSpec](http://rspec.info/) to test the API, [Jest](https://jestjs.io/) to test the React.js components, and [Cypress](https://www.cypress.io/) to run integration tests. We have also used [Travis CI](https://travis-ci.org/) as a continuous integration service throughout the development process.
+
+To run the API tests (RSpec):
 
 ```
 cd PetHub-backend
+bundle install
 rspec
 ```
-To run the client tests:
-
+To run the React.js component tests (Jest):
+```
+cd PetHub-frontend
+npm install
+npm test
+```
+To run the integration tests (Cypress):
+```
+cd PetHub-frontend
+npm install
+node_modules/.bin/cypress open
+```
 
 ## Deployment 🐩
 
-The project has been deployed using Heroku.
+PetHub has been deployed using [Heroku](http://heroku.com).
 
 ## Contributing 🐍
 
