@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PetHub 🐾 [![Build Status](https://travis-ci.com/githubsttar/PetHub-frontend.svg?branch=master)](https://travis-ci.com/githubsttar/PetHub-backend)
 
-## Available Scripts
+### [Team](https://github.com/githubsttar/PetHub-frontend#team) |  [User stories](https://github.com/githubsttar/PetHub-frontend#user-stories) |  [Getting started](https://github.com/githubsttar/PetHub-frontend#getting-started) |  [How to use](https://github.com/githubsttar/PetHub-frontend#how-to-use-pethub) | [Our approach](https://github.com/githubsttar/PetHub-frontend#our-approach) |   [Testing](https://github.com/githubsttar/PetHub-frontend#testing) |   [Deployment](https://github.com/githubsttar/PetHub-frontend#deployment) |  [Contributing](https://github.com/githubsttar/PetHub-frontend#contributing)
 
-In the project directory, you can run:
+PetHub is an application that helps reunite lost pets with their owners, built using a Ruby on Rails API and a React.js frontend.
 
-### `npm start`
+Live site: http://pet-hub.heroku-app.com 🐕🐩🐈🐴
+API: http://pet-hub-api.heroku-app.com 🐍🐠🦜🐇
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Back-end repo (Ruby on Rails API): http://github.com/tomasdoh/PetHub-backend
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Team 🐕
 
-### `npm test`
+* [Elly Chan](https://github.com/ellychanx)
+* [Ijeoma Nelson](https://github.com/githubsttar)
+* [Luisa Theodoro Paoliello](https://github.com/luisatheodoro)
+* [Tomas Doherty](https://github.com/tomasdoh)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User stories 🐈
 
-### `npm run build`
+Read all of the user stories [here](https://github.com/githubsttar/PetHub-backend/user-stories.md)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting started 🐠
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+To run the application and test suites locally, clone this repo for the client **and** clone the [back-end repo](https://github.com/tomasdoh/PetHub-backend) for the application's API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To launch the API on port 3001:
+```
+cd PetHub-backend
+bundle install
+bin/rails server -p 3001
+```
+To launch the client on port 3000:
+```
+cd PetHub-frontend
+npm install
+npm start
+```
+In order to get the app to work locally, you may need to change the configuration of the URLs used for API requests. Head to `PetHub-frontend/src/constants/index.js` to check that the local URLs are being used for fetch requests.
 
-### `npm run eject`
+## How to use PetHub 🦄
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*User journey and screenshots to be included here*
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Our approach 🦜
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing 🐴
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To run the API tests:
 
-## Learn More
+```
+cd PetHub-backend
+rspec
+```
+To run the client tests:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment 🐩
 
-### Code Splitting
+The project has been deployed using Heroku.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contributing 🐍
 
-### Analyzing the Bundle Size
+We welcome contributions to the project. Before making a change, please first discuss the contribution you wish to make via issue, email, or any other method with the project team.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Licence 🐇
