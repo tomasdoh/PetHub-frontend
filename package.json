@@ -39,7 +39,20 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "cypress": "^3.1.4",
     "react-helmet": "^5.2.0",
     "react-testing-library": "^5.4.4"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomasdoh/PetHub-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomasdoh/PetHub-frontend/issues"
   }
 }
