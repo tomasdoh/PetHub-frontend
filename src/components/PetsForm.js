@@ -8,6 +8,7 @@ class PetsForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -31,7 +32,7 @@ class PetsForm extends Component {
             <Col>
               <FormGroup>
                 <Label for="name">Name</Label>
-                <Input type="text" name="name" id="name" placeholder="Pet name" />
+                <Input type="text" autoFocus className='form-name' name="name" id="name" placeholder="Pet name" />
               </FormGroup>
             </Col>
             <Col>
