@@ -55,9 +55,9 @@ return (
         <Menu.Item
           className='menu__link'
           as={NavLink}
-          to="/users/new"
-          name='register'
-          active={activeItem === 'register'}
+          to="/signup"
+          name='signup'
+          active={activeItem === 'signup'}
           onClick={this.handleItemClick}>
           <Icon name="pencil"/>Register
         </Menu.Item>
