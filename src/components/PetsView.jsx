@@ -3,6 +3,11 @@ import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
 
 class PetsView extends Component {
 
+  constructor() {
+    super();
+    this.state = { results: [], };
+  }
+
   render () {
     return ( pet
       <Container>
