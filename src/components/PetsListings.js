@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { Container, Divider, Card } from 'semantic-ui-react';
 import { URL } from '../constants/index'
 
 class PetsListings extends Component {
@@ -67,9 +67,7 @@ class PetsListings extends Component {
            <Divider section />
        </Container>
      : <Container text>
-         <Dimmer active inverted>
-           <Loader content='Loading' />
-         </Dimmer>
+         No Pets found.
        </Container>
    }
 
