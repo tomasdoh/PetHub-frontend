@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import PetsView from "./PetsView";
 
 class PetsListings extends Component {
   constructor() {
@@ -7,12 +8,6 @@ class PetsListings extends Component {
     this.state = {};
     this.getPets = this.getPets.bind(this);
     this.getPet = this.getPet.bind(this);
-    this.routeChange = this.routeChange.bind(this);
-  }
-
-  routeChange(id){
-    let path = `/pets/${id}`;
-    this.props.history.push(path);
   }
 
   componentDidMount() {
@@ -44,31 +39,11 @@ class PetsListings extends Component {
 
   render () {
    let {pets, pet} = this.state;
-     return pet
-       ? <Container text>
-           <Divider hidden section />
-           {pets && pets.length
-             ? <Card.Group itemsPerRow={2}>
-               {Object.keys(pets).map((key) => {
-                 return <Card
-                 fluid key={key}
-                 onClick={() => this.routeChange(pets[key].id)}
-                 image={pets[key].picture}
-                 header={pets[key].name}
-                 description={pets[key].description}
-                 meta={pets[key].tag}
-                 />
-                 })}
-             </Card.Group>
-             : <Container textAlign='center'>No Pets found.</Container>
-           }
-           <Divider section />
-       </Container>
-     : <Container text>
-         <Dimmer active inverted>
-           <Loader content='Loading' />
-         </Dimmer>
-       </Container>
+     return (
+      <Container>
+        <PetsView data={this.props}/>
+      </Container>
+    )
    }
 
 }
