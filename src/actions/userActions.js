@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {GET_USER, ADD_USER, LOGOUT, USER_LOADING, LOGIN} from './types';
+import {ADD_USER, LOGOUT, LOGIN} from './types';
 
 export const addUser = (user, history) => dispatch => {
   axios
