@@ -67,9 +67,7 @@ class PetsListings extends Component {
            <Divider section />
        </Container>
      : <Container text>
-         <Dimmer active inverted>
-           <Loader content='Loading' />
-         </Dimmer>
+         No Pets found.
        </Container>
    }
 
