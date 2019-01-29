@@ -34,7 +34,7 @@ class PetsForm extends Component {
             <Col>
               <FormGroup>
                 <Label for="name">Name</Label>
-                <Input type="text" autoFocus className='pet-name' name="name" id="name" placeholder="Pet name" />
+                <Input type="text" autoFocus className='form-name' name="name" id="name" placeholder="Pet name" />
               </FormGroup>
             </Col>
             <Col>
