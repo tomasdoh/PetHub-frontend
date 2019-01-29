@@ -14,6 +14,8 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import ConversationsList from './components/chat/ConversationsList';
 import Filter from "./components/Filter";
 
+import Test from "./components/test";
+
 class App extends Component {
   render() {
     return (
@@ -30,6 +32,7 @@ class App extends Component {
               <Route exact path="/pets/found" component={() => <Filter tag="Found"/>} />
               <Route exact path="/pets/:id" component={Pet}/>
               <Route exact path="/conversations" component={ConversationsList}/>
+              <Route exact path="/test" component={Test}/>
             </Switch>
           </Container>
         </Layout>
