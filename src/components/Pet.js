@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Header, Image } from 'semantic-ui-react';
 import Iframe from 'react-iframe';
+import { URL } from '../constants/index'
 
 class Pet extends Component {
   constructor() {
@@ -20,7 +21,7 @@ class Pet extends Component {
   }
 
   getPet() {
-    this.fetch(`/pets/${this.props.match.params.id}`)
+    this.fetch(URL + `/pets/${this.props.match.params.id}`)
     .then(pet => {
       this.setState({pet: pet});
     })

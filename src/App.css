@@ -1,5 +1,13 @@
-.App {
+/*.App {*/
+  /*text-align: center;*/
+/*}*/
+
+.already-signed-up {
   text-align: center;
+}
+.signup-header {
+  text-align: center;
+  color: crimson;
 }
 
 .App-logo {

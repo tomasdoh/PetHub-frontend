@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { Container, Divider, Card } from 'semantic-ui-react';
+import { URL } from '../constants/index'
 import PetsView from "./PetsView";
 
+
 class PetsListings extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       results: [],
     };
@@ -18,14 +20,13 @@ class PetsListings extends Component {
   }
 
   render () {
-    const {results} = this.state;
-    return (
+   const {results} = this.state;
+   return (
       <Container>
         <PetsView data={results}/>
       </Container>
     )
-   }
-
+  }
 }
 
 export default PetsListings;

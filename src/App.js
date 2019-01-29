@@ -3,6 +3,8 @@ import {Container} from 'semantic-ui-react'
 import Layout from './components/Layout'
 import PetsListings from './components/PetsListings';
 import Pet from './components/Pet';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
 import Router from "react-router/Router";
 import Route from "react-router/Route";
 import Switch from "react-router/Switch";
@@ -13,31 +15,35 @@ import PetsForm from "./components/PetsForm";
 import { GoogleApiWrapper } from 'google-maps-react';
 import ConversationsList from './components/chat/ConversationsList';
 import Filter from "./components/Filter";
+import {Provider} from 'react-redux';
+import store from './store';
 
 import Test from "./components/test";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      <Router history={createBrowserHistory()}>
-        <Layout>
-          <Container>
-            <Switch>
-              <Route exact path="/login" />
-              <Route exact path="/signup" />
-              <Route exact path="/pets" component={PetsListings}/>
-              <Route exact path="/pets/create" component={PetsForm}/>
-              <Route exact path="/pets/lost" component={() => <Filter tag="Lost"/>} />
-              <Route exact path="/pets/found" component={() => <Filter tag="Found"/>} />
-              <Route exact path="/pets/:id" component={Pet}/>
-              <Route exact path="/conversations" component={ConversationsList}/>
-              <Route exact path="/test" component={Test}/>
-            </Switch>
-          </Container>
-        </Layout>
-      </Router>
-      </div>
+
+      <Provider store={store}>
+        <div className="App">
+        <Router history={createBrowserHistory()}>
+          <Layout>
+            <Container>
+              <Switch>
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/signup" component={SignUp}/>
+                <Route exact path="/pets" component={PetsListings}/>
+                <Route exact path="/pets/create" component={PetsForm}/>
+                <Route exact path="/pets/lost" component={() => <Filter tag="Lost"/>} />
+                <Route exact path="/pets/found" component={() => <Filter tag="Found"/>} />
+                <Route exact path="/pets/:id" component={Pet}/>
+                <Route exact path="/conversations" component={ConversationsList}/>
+              </Switch>
+            </Container>
+          </Layout>
+        </Router>
+        </div>
+      </Provider>
     );
   }
 }
