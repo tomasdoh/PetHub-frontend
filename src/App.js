@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Container} from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react'
 import Layout from './components/Layout'
 import PetsListings from './components/PetsListings';
 import Pet from './components/Pet';
@@ -15,7 +15,7 @@ import PetsForm from "./components/PetsForm";
 import { GoogleApiWrapper } from 'google-maps-react';
 import ConversationsList from './components/chat/ConversationsList';
 import Filter from "./components/Filter";
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
 
 class App extends Component {

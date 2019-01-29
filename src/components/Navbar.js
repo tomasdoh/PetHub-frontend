@@ -5,8 +5,8 @@ import {
   Icon,
   Menu
 } from "semantic-ui-react";
-import connect from "react-redux/es/connect/connect";
-import {logoutUser} from '../actions/userActions';
+import { connect } from "react-redux/es/connect/connect";
+import { logoutUser } from '../actions/userActions';
 
 class NavBar extends Component{
   constructor(){
@@ -134,4 +134,3 @@ const mapStateToProps = state => ({
 });
 
 export default  connect(mapStateToProps, {logoutUser})(NavBar);
-
