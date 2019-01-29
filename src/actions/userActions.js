@@ -5,7 +5,7 @@ import {ADD_USER, LOGOUT, LOGIN} from './types';
 
 export const addUser = (user, history) => dispatch => {
   axios
-    .post(URL + '/users/create', user)
+    .post(URL + '/users', user)
     .then(res => dispatch({
       type: ADD_USER,
       payload: res.data
