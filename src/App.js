@@ -13,28 +13,32 @@ import PetsForm from "./components/PetsForm";
 import { GoogleApiWrapper } from 'google-maps-react';
 import ConversationsList from './components/chat/ConversationsList';
 import Filter from "./components/Filter";
+import {Provider} from 'react-redux';
+import store from './store';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      <Router history={createBrowserHistory()}>
-        <Layout>
-          <Container>
-            <Switch>
-              <Route exact path="/login" />
-              <Route exact path="/signup" />
-              <Route exact path="/pets" component={PetsListings}/>
-              <Route exact path="/pets/create" component={PetsForm}/>
-              <Route exact path="/pets/lost" component={() => <Filter tag="Lost"/>} />
-              <Route exact path="/pets/found" component={() => <Filter tag="Found"/>} />
-              <Route exact path="/pets/:id" component={Pet}/>
-              <Route exact path="/conversations" component={ConversationsList}/>
-            </Switch>
-          </Container>
-        </Layout>
-      </Router>
-      </div>
+      <Provider store={store}>
+        <div className="App">
+        <Router history={createBrowserHistory()}>
+          <Layout>
+            <Container>
+              <Switch>
+                <Route exact path="/login" />
+                <Route exact path="/signup" />
+                <Route exact path="/pets" component={PetsListings}/>
+                <Route exact path="/pets/create" component={PetsForm}/>
+                <Route exact path="/pets/lost" component={() => <Filter tag="Lost"/>} />
+                <Route exact path="/pets/found" component={() => <Filter tag="Found"/>} />
+                <Route exact path="/pets/:id" component={Pet}/>
+                <Route exact path="/conversations" component={ConversationsList}/>
+              </Switch>
+            </Container>
+          </Layout>
+        </Router>
+        </div>
+      </Provider>
     );
   }
 }
