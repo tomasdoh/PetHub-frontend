@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { Router, Route, IndexRoute, withRouter } from 'react-router';
 
 class PetsView extends Component {
 
@@ -8,8 +9,15 @@ class PetsView extends Component {
     this.state = { results: [], };
   }
 
+  routeChange(id){
+    let path = `/pets/${id}`;
+    this.props.history.push(path);
+  }
+
   render () {
-    return ( pet
+    this.state.results = this.props.data
+    const {results} = this.state;
+    return ( 
       <Container>
         <Divider hidden section />
           {results.length
@@ -17,6 +25,7 @@ class PetsView extends Component {
                {results.map(pet => {
                  return <Card
                  fluid key={pet.id}
+                 onClick={() => this.routeChange(pet.id)}
                  image={pet.picture}
                  header={pet.name}
                  description={pet.description}
@@ -33,7 +42,7 @@ class PetsView extends Component {
   }
 }
 
-export default PetsView;
+export default withRouter(PetsView);
 
 
 // {results.map(pet => 
