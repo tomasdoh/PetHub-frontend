@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import PetsListings from './components/PetsListings';
 import Pet from './components/Pet';
 import SignUp from './components/SignUp';
+import Login from './components/Login';
 import Router from "react-router/Router";
 import Route from "react-router/Route";
 import Switch from "react-router/Switch";
@@ -26,7 +27,7 @@ class App extends Component {
           <Layout>
             <Container>
               <Switch>
-                <Route exact path="/login" />
+                <Route exact path="/login" component={Login}/>
                 <Route exact path="/signup" component={SignUp}/>
                 <Route exact path="/pets" component={PetsListings}/>
                 <Route exact path="/pets/create" component={PetsForm}/>
