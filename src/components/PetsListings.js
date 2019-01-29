@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { Container, Divider, Card } from 'semantic-ui-react';
 import { URL } from '../constants/index'
 
 class PetsListings extends Component {
