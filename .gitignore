@@ -24,3 +24,4 @@ yarn-error.log*
 
 .env
 note.md
+.idea
