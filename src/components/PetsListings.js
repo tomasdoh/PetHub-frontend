@@ -5,43 +5,23 @@ import PetsView from "./PetsView";
 class PetsListings extends Component {
   constructor() {
     super();
-    this.state = {};
-    this.getPets = this.getPets.bind(this);
-    this.getPet = this.getPet.bind(this);
+    this.state = {
+      results: [],
+    };
   }
 
   componentDidMount() {
-    this.getPets();
-  }
-
-  fetch(endpoint) {
-    return window.fetch(endpoint)
+    return window.fetch('/pets')
       .then(response => response.json())
+      .then(data => this.setState({ results: data}))
       .catch(error => console.log(error))
   }
 
-  getPets() {
-    this.fetch('/pets')
-      .then(pets => {
-        if (pets.length) {
-          this.setState({pets: pets});
-          this.getPet(pets[0].id)
-        } else {
-          this.setState({pets: []})
-        }
-      })
-  }
-
-  getPet(id) {
-    this.fetch(`/pets/${id}`)
-      .then(pet => this.setState({pet: pet}))
-  }
-
   render () {
-   let {pets, pet} = this.state;
-     return (
+    const {results} = this.state;
+    return (
       <Container>
-        <PetsView data={this.props}/>
+        <PetsView data={results}/>
       </Container>
     )
    }
