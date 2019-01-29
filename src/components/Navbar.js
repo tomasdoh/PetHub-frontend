@@ -52,6 +52,22 @@ class NavBar extends Component{
         <Menu.Item
           className='menu__link'
           as={NavLink}
+          to="/pets/lost"
+          name='lostPets'
+          active={activeItem === 'lostPets'}>
+          <Icon name="paw"/>View Lost
+        </Menu.Item>
+        <Menu.Item
+          className='menu__link'
+          as={NavLink}
+          to="/pets/found"
+          name='foundPets'
+          active={activeItem === 'foundPets'}>
+          <Icon name="paw"/>View Found
+        </Menu.Item>
+        <Menu.Item
+          className='menu__link'
+          as={NavLink}
           to="/pets/create"
           name='newPets'
           active={activeItem === 'newPets'}
