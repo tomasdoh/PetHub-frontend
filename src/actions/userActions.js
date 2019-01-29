@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { URL } from '../constants/index'
 
 import {ADD_USER, LOGOUT, LOGIN} from './types';
 
 export const addUser = (user, history) => dispatch => {
   axios
-    .post(window.location.protocol + '//' + window.location.hostname + ':3001/users/create', user)
+    .post(URL + '/users/create', user)
     .then(res => dispatch({
       type: ADD_USER,
       payload: res.data
@@ -16,7 +17,7 @@ export const addUser = (user, history) => dispatch => {
 
 export const loginUser = (user, history) => dispatch => {
   axios
-    .post(window.location.protocol + '//' + window.location.hostname + ':3001/users/login', user)
+    .post(URL + '/users/login', user)
     .then(res => {
       localStorage.setItem('user', JSON.stringify(res.data));
       dispatch({
