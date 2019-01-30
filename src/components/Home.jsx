@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Button } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './component_css/Home.css';
 
