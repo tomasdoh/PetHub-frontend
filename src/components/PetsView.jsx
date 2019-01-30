@@ -4,10 +4,6 @@ import { withRouter } from 'react-router';
 
 class PetsView extends Component {
 
-  constructor() {
-    super();
-  }
-
   routeChange(id){
     let path = `/pets/${id}`;
     this.props.history.push(path);

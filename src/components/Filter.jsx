@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { URL } from '../constants/index'
 
 class Filter extends Component {
 
@@ -22,7 +23,7 @@ class Filter extends Component {
 
   getPets() {
     // this.fetch('/pets')
-    var fetchUrl = '/pets'
+    var fetchUrl = `${URL}/pets`
     if (this.props.tag !== null) {
       fetchUrl += '?tag=' + this.props.tag;
     }
@@ -38,7 +39,7 @@ class Filter extends Component {
   }
 
   getPet(id) {
-    this.fetch(`/pets/${id}`)
+    this.fetch(`${URL}/pets/${id}`)
       .then(pet => this.setState({pet: pet}))
   }
 
