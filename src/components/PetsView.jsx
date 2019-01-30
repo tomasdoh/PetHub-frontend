@@ -26,7 +26,7 @@ class PetsView extends Component {
                  return <Card
                  fluid key={pet.id}
                  onClick={() => this.routeChange(pet.id)}
-                 image={pet.picture}
+                 image={pet.fileBase64}
                  header={pet.name}
                  description={pet.description}
                  meta={pet.tag}

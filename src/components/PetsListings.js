@@ -13,7 +13,7 @@ class PetsListings extends Component {
   }
 
   componentDidMount() {
-    return window.fetch('/pets')
+    return window.fetch(`${URL}/pets`)
       .then(response => response.json())
       .then(data => this.setState({ results: data}))
       .catch(error => console.log(error))
