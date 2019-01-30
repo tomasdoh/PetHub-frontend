@@ -1,22 +1,32 @@
 import React, {Component} from 'react';
-import {Container, Image} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
 import PetsView from "./PetsView";
+import {URL} from "../constants";
 
 class Profile extends Component {
 
   constructor(props) {
     super(props);
     this.state = { results: [], };
-    console.log(this.state)
+    this.getPets = this.getPets.bind(this);
   }
 
-  componentDidMount() {
-    return window.fetch(`${URL}/pets`)
+  fetch(endpoint) {
+    return window.fetch(endpoint)
       .then(response => response.json())
-      .then(data => this.setState({ results: data}))
       .catch(error => console.log(error))
   }
 
+  componentDidMount() {
+    this.getPets()
+  }
+
+  getPets() {
+    this.fetch(URL + '/pets')
+      .then(data => {
+        this.setState({results: data});
+      });
+  }
   render () {
     const {results} = this.state;
     return (
@@ -26,6 +36,5 @@ class Profile extends Component {
     )
   }
 }
-
 
 export default Profile;
