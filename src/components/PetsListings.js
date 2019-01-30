@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Divider, Card } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { URL } from '../constants/index'
 import PetsView from "./PetsView";
 
@@ -7,9 +7,7 @@ import PetsView from "./PetsView";
 class PetsListings extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      results: [],
-    };
+    this.state = { results: [], };
   }
 
   componentDidMount() {

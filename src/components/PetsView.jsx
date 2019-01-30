@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
-import { Router, Route, IndexRoute, withRouter } from 'react-router';
+import { Container, Divider, Card } from 'semantic-ui-react';
+import { withRouter } from 'react-router';
 
 class PetsView extends Component {
 
   constructor() {
     super();
-    this.state = { results: [], };
   }
 
   routeChange(id){
@@ -15,8 +14,7 @@ class PetsView extends Component {
   }
 
   render () {
-    this.state.results = this.props.data
-    const {results} = this.state;
+    const results = this.props.data;
     return ( 
       <Container>
         <Divider hidden section />
