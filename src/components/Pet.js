@@ -35,7 +35,7 @@ class Pet extends Component {
         <Container className='pet-container'  textAlign='center'>
           <h1 className='pet-tag-header'>Pet {pet.tag}</h1>
           <h2 className='pet-name'>Hi, my name is {pet.name}</h2>
-          <Image  className='pet-image' centered size='medium' src={pet.fileBase64}/>
+          <Image  className='pet-image' centered size='medium' src={pet.fileBase64} alt='pet-picture'/>
           <p className='pet-description'>{pet.description}</p>
           <h2 className='location-text'>My last location was at</h2>
           <Iframe className='pet-location' url={embedUrl + encodeURI(pet.location)}

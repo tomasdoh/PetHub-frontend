@@ -27,7 +27,7 @@ class NavBar extends Component{
     return (
       <Menu pointing secondary size={'massive'} stackable={true} className="top-navbar">
         <Menu.Item className="logo">
-          <img src="https://www.dropbox.com/s/fn82uhwu8jawa3b/findmypet.png?raw=1" />
+          <img src="https://www.dropbox.com/s/fn82uhwu8jawa3b/findmypet.png?raw=1" alt='pet-logo' />
         </Menu.Item>
         <Menu.Item
           exact
