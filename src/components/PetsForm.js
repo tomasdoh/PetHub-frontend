@@ -9,7 +9,7 @@ function validate(name, file) {
   // true means invalid, so our conditions got reversed
   return {
     name: name.length === 0,
-    file: file.length ===0
+    file: file.length === 0
   };
 }
 
@@ -75,7 +75,7 @@ class PetsForm extends Component {
           <Row form>
             <Col>
               <FormGroup>
-                <Label for="name">Name</Label>
+                <Label for="name">Pet Name</Label>
                 <Input  type="text" autoFocus className='form-name' 
                         name="name" id="name" placeholder="Pet name" 
                         value={this.state.name}
@@ -85,8 +85,11 @@ class PetsForm extends Component {
             </Col>
             <Col>
               <FormGroup>
-                <Label for="owner">Owner</Label>
-                <Input type="text" autoFocus className='pet-owner' name="owner" id="owner" placeholder="Your name" />
+                <Label for="exampleSelect">Status</Label>
+                  <Input type="select" name="tag" id="exampleTag">
+                    <option>Lost</option>
+                    <option>Found</option>
+                </Input>
               </FormGroup>
             </Col>
           </Row>
@@ -100,15 +103,6 @@ class PetsForm extends Component {
             <FormText color="muted">
             </FormText>
           </FormGroup>
-          <FormGroup>
-            <Label for="exampleSelect">Status</Label>
-            <Input type="select" name="tag" id="exampleTag">
-              <option>Lost</option>
-              <option>Found</option>
-              <option>Reunited</option>
-            </Input>
-          </FormGroup>
-
           <FormGroup>
             <Label for="location">Last Seen Location</Label>
             <GeoAutoComplete />
