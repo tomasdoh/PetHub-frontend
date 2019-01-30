@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import {Container} from 'semantic-ui-react';
 import PetsView from "./PetsView";
 import {URL} from "../constants";
+import connect from "react-redux/es/connect/connect";
 
-class Profile extends Component {
+class profile extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { results: [], };
+    this.state = {
+      pets: []
+    };
     this.getPets = this.getPets.bind(this);
   }
 
@@ -24,23 +27,30 @@ class Profile extends Component {
   getPets() {
     this.fetch(URL + '/pets')
       .then(data => {
-        this.setState({results: data});
+        this.setState({pets: data});
       });
   }
+
   render () {
-    const {results} = this.state;
-    const arr = [];
-    Object.keys(results).map(function(key) {
-      console.log(results[key].user_id);
-      arr.push(results[key])
+    const pets = this.state.pets;
+    const users_pet = [];
+    pets.map(pet => {
+      if (pet.user_id === this.props.user.id) {
+        users_pet.push(pet);
+      }
     });
-  return (
-    <Container>
-      <PetsView data={arr}/>
-    </Container>
-  )
+
+    return (
+      <Container>
+        <PetsView data={users_pet}/>
+      </Container>
+    )
   }
 
 }
 
-export default Profile;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(profile);
