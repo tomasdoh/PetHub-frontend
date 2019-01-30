@@ -29,17 +29,16 @@ class Profile extends Component {
   }
   render () {
     const {results} = this.state;
-
-      var arr = []
-      Object.keys(results).forEach(function(key) {
-
-        arr.push(results[key])
-      });
-    return (
-      <Container>
-        <PetsView data={arr}/>
-      </Container>
-    )
+    const arr = [];
+    Object.keys(results).map(function(key) {
+      console.log(results[key].user_id);
+      arr.push(results[key])
+    });
+  return (
+    <Container>
+      <PetsView data={arr}/>
+    </Container>
+  )
   }
 
 }
