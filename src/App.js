@@ -33,7 +33,7 @@ class App extends Component {
                 <Route exact path="/signup" component={SignUp}/>
                 <Route exact path="/pets" component={PetsListings}/>
                 <Route exact path="/pets/create" component={PetsForm}/>
-                <Route exact path="/pets/update/:id" component={UpdatePet}/>
+                <Route exact path="/pets/:id/update" component={UpdatePet}/>
                 <Route exact path="/pets/lost" component={() => <Filter tag="Lost"/>} />
                 <Route exact path="/pets/found" component={() => <Filter tag="Found"/>} />
                 <Route exact path="/pets/:id" component={Pet}/>

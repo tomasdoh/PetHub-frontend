@@ -38,8 +38,8 @@ class Pet extends Component {
           <h2 className='pet-name'>Hi, my name is {pet.name}</h2>
           <Image  className='pet-image' centered size='medium' src={pet.fileBase64} alt='pet-picture'/>
           <p className='pet-description'>{pet.description}</p>
-          <h4><Link to={`/pets/update/${pet.id}`}>Update</Link></h4>
-          <h4><Link to={`/pets/delete/${pet.id}`}>Delete</Link></h4>
+          <h4><Link to={`/pets/${pet.id}/update`}>Update</Link></h4>
+          <h4><Link to={`/pets/${pet.id}/delete`}>Delete</Link></h4>
           <h2 className='location-text'>Last seen in: {pet.location}</h2>
           <Iframe className='pet-location' url={embedUrl + encodeURI(pet.location)}
                   width="450px"
