@@ -36,7 +36,6 @@ class PetsView extends Component {
              : <Container textAlign='center'>No Pets found.</Container>
           }
         <Divider section />
-
       </Container>
      )
   }

@@ -18,8 +18,6 @@ import Filter from "./components/Filter";
 import {Provider} from 'react-redux';
 import store from './store';
 
-import Test from "./components/test";
-
 class App extends Component {
   render() {
     return (
