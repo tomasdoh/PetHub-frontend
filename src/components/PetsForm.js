@@ -5,13 +5,44 @@ import { URL, HEADERS } from '../constants/index'
 import FileBase64 from 'react-file-base64';
 import connect from "react-redux/es/connect/connect";
 
+function validate(name, file) {
+  // true means invalid, so our conditions got reversed
+  return {
+    name: name.length === 0,
+    file: file.length ===0
+  };
+}
+
 class PetsForm extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.state = {
+      name: '',
+      file: '',
+    };
   }
 
+  handleNameChange(event) {
+    this.setState({ name: event.target.value });
+  }
+
+  // canBeSubmitted() {
+  //   const errors = validate(this.state.name);
+  //   const isDisabled = Object.keys(errors).some(x => errors[x]);
+  //   return !isDisabled;
+  // }
+
+
   handleSubmit(event) {
+
+    // if (!this.canBeSubmitted()) {
+    //   event.preventDefault();
+    //   alert(`something`);
+    //   return;
+    // }
+
     event.preventDefault();
     const data = new FormData(event.target);
     data.set('user_id', this.props.user.id);
@@ -34,15 +65,22 @@ class PetsForm extends Component {
   }
 
   render() {
+    const errors = validate(this.state.name, this.state.file);
+    const isDisabled = Object.keys(errors).some(x => errors[x]);
+
     return (
       <Container className='App'>
         <h1>Enter your pet information</h1>
-        <Form onSubmit={this.handleSubmit}  className="form">
+        <Form onSubmit={this.handleSubmit}  className="form" id='petform'>
           <Row form>
             <Col>
               <FormGroup>
                 <Label for="name">Name</Label>
-                <Input type="text" autoFocus className='form-name' name="name" id="name" placeholder="Pet name" />
+                <Input  type="text" autoFocus className='form-name' 
+                        name="name" id="name" placeholder="Pet name" 
+                        value={this.state.name}
+                        onChange={this.handleNameChange}
+                />
               </FormGroup>
             </Col>
             <Col>
@@ -75,7 +113,7 @@ class PetsForm extends Component {
             <Label for="location">Last Seen Location</Label>
             <GeoAutoComplete />
           </FormGroup>
-          <Button color="dark" className='button' style={{marginTop: '2rem'}} block>Report</Button>
+          <Button color="dark" className='button' style={{marginTop: '2rem'}} block disabled={isDisabled}>Report</Button>
         </Form>
       </Container>
     );
