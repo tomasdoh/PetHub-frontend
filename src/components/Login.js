@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button, Col, Container, Form, FormGroup, Input, Label, Row} from "reactstrap";
+import {Button, Col, Form, FormGroup, Input, Label, Row} from "reactstrap";
 import {loginUser} from '../actions/userActions';
 import {connect} from 'react-redux';
 
