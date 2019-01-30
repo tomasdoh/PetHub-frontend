@@ -19,6 +19,7 @@ class PetsView extends Component {
                {results.map(pet => {
                  return <Card
                    className='card-container'
+                   key={pet.id}
                    onClick={() => this.routeChange(pet.id)}
                    image={pet.fileBase64}
                    header={'Hi, my name is ' + pet.name}

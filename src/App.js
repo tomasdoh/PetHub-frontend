@@ -6,7 +6,7 @@ import Pet from './components/Pet';
 import UpdatePet from './components/UpdatePet';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import profile from './components/profile';
+import Profile from './components/Profile';
 import Router from "react-router/Router";
 import Route from "react-router/Route";
 import Switch from "react-router/Switch";
@@ -20,6 +20,8 @@ import Filter from "./components/Filter";
 import {Provider} from 'react-redux';
 import store from './store';
 
+import Home from "./components/Home";
+
 class App extends Component {
   render() {
     return (
@@ -30,7 +32,8 @@ class App extends Component {
           <Layout>
             <Container>
               <Switch>
-                <Route exact path="/profile" component={profile}/>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/profile" component={Profile}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/signup" component={SignUp}/>
                 <Route exact path="/pets" component={PetsListings}/>
