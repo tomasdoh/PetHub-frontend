@@ -4,6 +4,19 @@ import PetsView from "./PetsView";
 
 class Profile extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { results: [], };
+    console.log(this.state)
+  }
+
+  componentDidMount() {
+    return window.fetch(`${URL}/pets`)
+      .then(response => response.json())
+      .then(data => this.setState({ results: data}))
+      .catch(error => console.log(error))
+  }
+
   render () {
     const {results} = this.state;
     return (
@@ -12,5 +25,7 @@ class Profile extends Component {
       </Container>
     )
   }
-
 }
+
+
+export default Profile;
