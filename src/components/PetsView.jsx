@@ -36,10 +36,3 @@ class PetsView extends Component {
 }
 
 export default withRouter(PetsView);
-
-
-// {results.map(pet => 
-//     <li key={pet.id}>
-//       <a href={pet.name}>{pet.name}</a>
-//     </li>
-//     )}
