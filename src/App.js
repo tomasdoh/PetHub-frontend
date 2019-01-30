@@ -19,6 +19,8 @@ import Filter from "./components/Filter";
 import {Provider} from 'react-redux';
 import store from './store';
 
+import Home from "./components/Home";
+
 class App extends Component {
   render() {
     return (
@@ -29,6 +31,7 @@ class App extends Component {
           <Layout>
             <Container>
               <Switch>
+                <Route exact path="/" component={Home}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/signup" component={SignUp}/>
                 <Route exact path="/pets" component={PetsListings}/>
