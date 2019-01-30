@@ -18,8 +18,8 @@ class PetsListings extends Component {
   }
 
   render () {
-   const {results} = this.state;
-   return (
+    const {results} = this.state;
+    return (
       <Container>
         <PetsView data={results}/>
       </Container>

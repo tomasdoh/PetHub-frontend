@@ -18,14 +18,14 @@ class PetsView extends Component {
              ? <Card.Group itemsPerRow={2}>
                {results.map(pet => {
                  return <Card
-                 fluid key={pet.id}
-                 onClick={() => this.routeChange(pet.id)}
-                 image={pet.fileBase64}
-                 header={pet.name}
-                 description={pet.description}
-                 meta={pet.tag}
+                   className='card-container'
+                   onClick={() => this.routeChange(pet.id)}
+                   image={pet.fileBase64}
+                   header={'Hi, my name is ' + pet.name}
+                   description={ pet.description}
+                   meta={'Status: ' + pet.tag}
                  />
-                 })}
+               })}
              </Card.Group>
              : <Container textAlign='center'>No Pets found.</Container>
           }

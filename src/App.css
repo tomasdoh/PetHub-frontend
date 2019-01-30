@@ -1,40 +1,131 @@
-/*.App {*/
-  /*text-align: center;*/
+/*!*.App {*!*/
+/*!*text-align: center;*!*/
+/*!*}*!*/
+/*a {*/
+/*color: white;*/
+/*}*/
+/*!*@media (min-width: 992px) {*!*/
+/*!*.nav-item {*!*/
+/*!*color: white;*!*/
+/*!*font-size: 20px;*!*/
+/*!*padding: 16px 12px;*!*/
+/*!*display: flex;*!*/
+/*!*flex-direction: row;*!*/
+/*!*justify-content: flex-start;*!*/
+/*!*align-items: center;*!*/
+/*!*margin-right: 20px;*!*/
+/*!*}*!*/
+/*!*}*!*/
+
+/*.navbar-custom {*/
+/*background-color: #56315d;*/
+/*}*/
+/*.already-signed-up {*/
+/*text-align: center;*/
+/*}*/
+/*.signup-header {*/
+/*text-align: center;*/
+/*color: crimson;*/
 /*}*/
 
-.already-signed-up {
-  text-align: center;
-}
-.signup-header {
-  text-align: center;
-  color: crimson;
+/*.App-logo {*/
+/*animation: App-logo-spin infinite 20s linear;*/
+/*height: 40vmin;*/
+/*}*/
+
+/*.App-header {*/
+/*background-color: #282c34;*/
+/*min-height: 100vh;*/
+/*display: flex;*/
+/*flex-direction: column;*/
+/*align-items: center;*/
+/*justify-content: center;*/
+/*font-size: calc(10px + 2vmin);*/
+/*color: white;*/
+/*}*/
+
+/*.App-link {*/
+/*color: #61dafb;*/
+/*}*/
+/*.mb-5{*/
+
+/*}*/
+/*.logo {*/
+/*width: 150px;*/
+/*}*/
+
+/*@keyframes App-logo-spin {*/
+/*from {*/
+/*transform: rotate(0deg);*/
+/*}*/
+/*to {*/
+/*transform: rotate(360deg);*/
+/*}*/
+/*}*/
+
+body {
+  background: url('https://ih0.redbubble.net/image.507917787.4950/flat,750x1000,075,t.u5.jpg') !important;
+  /*background: url('https://www.freepik.com/free-photos-vectors/background') !important;*/
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.top-navbar {
+  background-color: #ea8738 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.top-navbar .logo {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.top-navbar .logo img {
+  width: 110px !important;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.top-navbar .item {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.main-container {
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+}
+
+.pet-container {
+  border: 1px dashed;
+  padding: 20px;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.pet-image {
+  border-radius: 20px;
+}
+
+.pet-tag-header {
+  font-family: 'Baloo Thambi', cursive;
   color: white;
+  margin-left: 354px;
+  border-radius: 13px;
+  background-color: #ef5454;
+  width: 146px;
 }
 
-.App-link {
-  color: #61dafb;
+.pet-name, .pet-description, .location-text {
+  font-family: 'Dosis', sans-serif;
+  color: #516877;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pet-description {
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+.card-container {
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  color: #516877;
 }
