@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, Container, FormText } from 'reactstrap';
 import GeoAutoComplete from './GeoAutoComplete'
 import { URL, HEADERS } from '../constants/index'
+import FileBase64 from 'react-file-base64';
 
 class PetsForm extends Component {
   constructor() {
@@ -9,10 +10,11 @@ class PetsForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
+    data.set('fileBase64', this.state.file.base64);
+    data.set('fileContentType', this.state.file.type);
 
     fetch(URL + '/pets', {
       method: "POST",
@@ -23,6 +25,10 @@ class PetsForm extends Component {
         (json) => this.props.history.push('/pets/' + json.id)
       )
     );
+  }
+
+  getFile(file) {
+    this.setState({file: file});
   }
 
   render() {
@@ -50,7 +56,7 @@ class PetsForm extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="exampleFile">Picture</Label>
-            <Input type="file" name="picture" id="picture" />
+            <FileBase64 multiple={false} onDone={this.getFile.bind(this)}/>
             <FormText color="muted">
             </FormText>
           </FormGroup>
