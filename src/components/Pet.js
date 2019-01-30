@@ -29,7 +29,7 @@ class Pet extends Component {
 
   render() {
     let {pet} = this.state;
-    const embedUrl = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDoV0ZOnLZxi8blS6q2vSFqcl_GEV7ydyU&q=";
+    const embedUrl = "https://www.google.com/maps/embed/v1/place?key=" + process.env.REACT_APP_API_KEY + "&q=";
     return pet
       ? <div>
         <Container className='pet-container'  textAlign='center'>
@@ -44,7 +44,7 @@ class Pet extends Component {
                   display="initial"
                   position="relative"
                   allowFullScreen/>
-          </Container>
+        </Container>
       </div>
       : <div>
         <p> No pets :( </p>

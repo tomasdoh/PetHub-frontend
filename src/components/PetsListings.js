@@ -41,36 +41,36 @@ class PetsListings extends Component {
   getPet(id) {
     this.fetch(URL +`/pets/${id}`, {
     })
-    .then(pet => this.setState({pet: pet}))
+      .then(pet => this.setState({pet: pet}))
   }
 
   render () {
-   let {pets, pet} = this.state;
-     return pet
-       ? <Container text>
-           <Divider hidden section />
-           {pets && pets.length
-             ? <Card.Group itemsPerRow={2}>
-               {Object.keys(pets).map((key) => {
-                 return <Card
-                   className='card-container'
-                 fluid key={key}
-                 onClick={() => this.routeChange(pets[key].id)}
-                 image={pets[key].fileBase64}
-                 header={'Hi, my name is ' + pets[key].name}
-                 description={ pets[key].description}
-                 meta={'Status: ' + pets[key].tag}
-                 />
-                 })}
-             </Card.Group>
-             : <Container textAlign='center'>No Pets found.</Container>
-           }
-           <Divider section />
-       </Container>
-     : <Container text>
-         No Pets found.
-       </Container>
-   }
+    let {pets, pet} = this.state;
+    return pet
+      ? <Container text>
+        <Divider hidden section />
+        {pets && pets.length
+          ? <Card.Group itemsPerRow={2}>
+            {Object.keys(pets).map((key) => {
+              return <Card
+                className='card-container'
+                fluid key={key}
+                onClick={() => this.routeChange(pets[key].id)}
+                image={pets[key].fileBase64}
+                header={'Hi, my name is ' + pets[key].name}
+                description={ pets[key].description}
+                meta={'Status: ' + pets[key].tag}
+              />
+            })}
+          </Card.Group>
+          : <Container textAlign='center'>No Pets found.</Container>
+        }
+        <Divider section />
+      </Container>
+      : <Container text>
+        No Pets found.
+      </Container>
+  }
 
 }
 
