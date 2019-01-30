@@ -13,7 +13,6 @@ class NavBar extends Component{
     super();
 
     this.state={
-      activeItem: "home"
     }
   }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -27,12 +26,12 @@ class NavBar extends Component{
     const { activeItem } = this.state;
 
     return (
-      <Container className='menu'>
-        <Menu.Item className='menu__link'>
-          PetHub
+      <Menu pointing secondary size={'massive'} stackable={true} className="top-navbar">
+        <Menu.Item className="logo">
+          <img src="https://www.dropbox.com/s/fn82uhwu8jawa3b/findmypet.png?raw=1" />
         </Menu.Item>
         <Menu.Item
-          className='menu__link'
+          exact
           as={NavLink}
           to="/"
           name='home'
@@ -41,63 +40,55 @@ class NavBar extends Component{
           <Icon name="home"/>Home
         </Menu.Item>
         <Menu.Item
-          className='menu__link'
+          exact
           as={NavLink}
           to="/pets"
           name='allPets'
           active={activeItem === 'allPets'}
           onClick={this.handleItemClick}>
-          <Icon name="paw"/>View lost and found pets
+          <Icon name="paw"/>Lost & Found
         </Menu.Item>
+
+        {this.props.user.isLogged &&
         <Menu.Item
-          className='menu__link'
-          as={NavLink}
-          to="/pets/lost"
-          name='lostPets'
-          active={activeItem === 'lostPets'}>
-          <Icon name="paw"/>View Lost
-        </Menu.Item>
-        <Menu.Item
-          className='menu__link'
-          as={NavLink}
-          to="/pets/found"
-          name='foundPets'
-          active={activeItem === 'foundPets'}>
-          <Icon name="paw"/>View Found
-        </Menu.Item>
-        <Menu.Item
-          className='menu__link'
+          exact
           as={NavLink}
           to="/pets/create"
           name='newPets'
           active={activeItem === 'newPets'}
           onClick={this.handleItemClick}>
-          <Icon name="home"/>Report your missing pet
-        </Menu.Item>
-        {!this.props.user.isLogged &&
-        <Menu.Item
-          className='menu__link'
-          as={NavLink}
-          to="/signup"
-          name='signup'
-          active={activeItem === 'signup'}
-          onClick={this.handleItemClick}>
-          <Icon name="pencil"/>Register
+          <Icon name="home"/>Report
         </Menu.Item>
         }
+
         {!this.props.user.isLogged &&
-        <Menu.Item
-          className='menu__link'
-          as={NavLink}
-          to="/login"
-          name='login'
-          active={activeItem === 'login'}
-          onClick={this.handleItemClick}>
-          <Icon name="sign-in"/>Login
-        </Menu.Item>}
+        <Menu.Menu position='right'>
+          <Menu.Item
+            exact
+            as={NavLink}
+            to="/signup"
+            name='signup'
+            active={activeItem === 'signup'}
+            position='right'
+            onClick={this.handleItemClick}>
+            <Icon name="pencil"/>Register
+          </Menu.Item>
+          <Menu.Item
+            exact
+            as={NavLink}
+            to="/login"
+            name='login'
+            active={activeItem === 'login'}
+            position='right'
+            fitted={'horizontally'}
+            onClick={this.handleItemClick}>
+            <Icon name="sign-in"/>Login
+          </Menu.Item>
+        </Menu.Menu>}
+
         {this.props.user.isLogged &&
         <Menu.Item
-          className='menu__link'
+          exact
           as={NavLink}
           to="/conversations"
           name='conversations'
@@ -105,33 +96,39 @@ class NavBar extends Component{
           onClick={this.handleItemClick}>
           <Icon name="comments"/>Forum
         </Menu.Item>}
+
         {this.props.user.isLogged &&
-        <Menu.Item
-          className='menu__link'
-          as={NavLink}
-          to="/profile"
-          name='profile'
-          active={activeItem === 'profile'}
-          onClick={this.handleItemClick}>
-          <Icon name="user"/>{this.props.user.name}
-        </Menu.Item>}
-        {this.props.user.isLogged &&
-        <Menu.Item
-          className='menu__link'
-          as={NavLink}
-          to="/"
-          name='logout'
-          onClick={this.handleLogoutClick}>
-          <Icon name="sign-out"/>Logout
-        </Menu.Item>}
-      </Container>
+        <Menu.Menu position='right'>
+          <Menu.Item
+            exact
+            as={NavLink}
+            to="/profile"
+            name='profile'
+            active={activeItem === 'profile'}
+            position='right'
+            onClick={this.handleItemClick}>
+            <Icon name="user"/>{this.props.user.name}
+          </Menu.Item>
+          <Menu.Item
+            exact
+            as={NavLink}
+            to="/"
+            name='logout'
+            position='right'
+            onClick={this.handleLogoutClick}>
+            <Icon name="sign-out"/>Logout
+          </Menu.Item>
+        </Menu.Menu>
+        }
+      </Menu>
     )
   }
 }
+
 
 const mapStateToProps = state => ({
   user: state.user
 });
 
-export default  connect(mapStateToProps, {logoutUser})(NavBar);
+export default connect(mapStateToProps, {logoutUser})(NavBar);
 

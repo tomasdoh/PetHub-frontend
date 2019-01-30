@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Helmet from 'react-helmet';
+import {Container} from "reactstrap";
 
 
 const Layout = ({ children }) => (
@@ -16,10 +17,12 @@ const Layout = ({ children }) => (
       ]}
     >
     </Helmet>
-    <Navbar textAlign="center"/>
-    <div>
-      {children}
-    </div>
+    <Container className="main-container">
+      <Navbar textAlign="center"/>
+      <div>
+        {children}
+      </div>
+    </Container>
   </div>
 );
 
