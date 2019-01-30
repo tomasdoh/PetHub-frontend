@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button, Col, Container, Form, FormGroup, Input, Label, Row} from "reactstrap";
+import {Button, Col, Form, FormGroup, Input, Label, Row} from "reactstrap";
 import {loginUser} from '../actions/userActions';
 import {connect} from 'react-redux';
 
@@ -25,7 +25,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Container className='App'>
+      <div>
         <h1>Login</h1>
         <Form onSubmit={this.onSubmit} className="form">
           <Row form>
@@ -44,7 +44,7 @@ class Login extends Component {
           </Row>
           <Button color="dark" style={{marginTop: '2rem'}} block>Login</Button>
         </Form>
-      </Container>
+      </div>
     );
   }
 }

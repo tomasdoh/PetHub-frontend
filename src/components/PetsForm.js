@@ -3,6 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container, FormText } 
 import GeoAutoComplete from './GeoAutoComplete'
 import { URL, HEADERS } from '../constants/index'
 import FileBase64 from 'react-file-base64';
+import connect from "react-redux/es/connect/connect";
 
 class PetsForm extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class PetsForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
+    data.set('user_id', this.props.user.id);
     data.set('fileBase64', this.state.file.base64);
     data.set('fileContentType', this.state.file.type);
 
@@ -35,7 +37,7 @@ class PetsForm extends Component {
     return (
       <Container className='App'>
         <h1>Enter your pet information</h1>
-        <Form onSubmit={this.handleSubmit} className="form">
+        <Form onSubmit={this.handleSubmit}  className="form">
           <Row form>
             <Col>
               <FormGroup>
@@ -73,7 +75,6 @@ class PetsForm extends Component {
             <Label for="location">Last Seen Location</Label>
             <GeoAutoComplete />
           </FormGroup>
-
           <Button color="dark" className='button' style={{marginTop: '2rem'}} block>Report</Button>
         </Form>
       </Container>
@@ -81,4 +82,8 @@ class PetsForm extends Component {
   }
 }
 
-export default PetsForm;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(PetsForm);
