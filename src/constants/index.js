@@ -6,7 +6,6 @@ export const WS_URL = 'wss://pet-hub-api.herokuapp.com/cable';
 // export const URL = 'http://localhost:3001';
 // export const WS_URL = 'http://localhost:3001/cable';
 
-
 export const HEADERS = {
   'Content-Type': 'application/json',
   Accept: 'application/json',

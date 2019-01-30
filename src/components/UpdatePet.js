@@ -3,28 +3,32 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container, FormText } 
 import GeoAutoComplete from './GeoAutoComplete'
 import { URL, HEADERS } from '../constants/index'
 import FileBase64 from 'react-file-base64';
-import connect from "react-redux/es/connect/connect";
 
-class PetsForm extends Component {
+class UpdatePet extends Component {
   constructor() {
     super();
+    this.state = {};
+    this.getPet = this.getPet.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.getPet(this.props.match.params.id);
   }
 
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
-    data.set('user_id', this.props.user.id);
     data.set('fileBase64', this.state.file.base64);
     data.set('fileContentType', this.state.file.type);
 
-    fetch(URL + '/pets', {
-      method: "POST",
+    fetch(URL + `/pets/${this.props.match.params.id}`, {
+      method: "PUT",
       header: HEADERS,
       body: data
     }).then(
       (response) => response.json().then(
-        (json) => this.props.history.push('/pets/' + json.id)
+        (json) => this.props.history.push(`/pets/${this.props.match.params.id}`)
       )
     );
   }
@@ -33,28 +37,36 @@ class PetsForm extends Component {
     this.setState({file: file});
   }
 
+  getPet(id) {
+    fetch(URL +`/pets/${this.props.match.params.id}`, {
+    })
+    .then(pet => this.setState({pet: pet}))
+  }
+
   render() {
-    return (
+    let {pet} = this.state;
+    return pet
+      ?
       <Container className='App'>
-        <h1>Enter your pet information</h1>
-        <Form onSubmit={this.handleSubmit}  className="form">
+        <h1>Update pet</h1>
+        <Form onSubmit={this.handleSubmit} className="form">
           <Row form>
             <Col>
               <FormGroup>
                 <Label for="name">Name</Label>
-                <Input type="text" autoFocus className='form-name' name="name" id="name" placeholder="Pet name" />
+                <Input type="text" autoFocus className='form-name' name="name" id="name" placeholder="Name" />
               </FormGroup>
             </Col>
             <Col>
               <FormGroup>
                 <Label for="owner">Owner</Label>
-                <Input type="text" autoFocus className='pet-owner' name="owner" id="owner" placeholder="Your name" />
+                <Input type="text" autoFocus className='pet-owner' name="owner" id="owner" placeholder="Owner" />
               </FormGroup>
             </Col>
           </Row>
           <FormGroup>
             <Label for="description">Description</Label>
-            <Input type="textarea" autoFocus className='pet-description' name="description" id="description" placeholder="Describe the pet"/>
+            <Input type="textarea" autoFocus className='pet-description' name="description" id="description" placeholder="Description"/>
           </FormGroup>
           <FormGroup>
             <Label for="exampleFile">Picture</Label>
@@ -73,17 +85,16 @@ class PetsForm extends Component {
 
           <FormGroup>
             <Label for="location">Last Seen Location</Label>
-            <GeoAutoComplete />
+            <GeoAutoComplete placeholder={pet.location}/>
           </FormGroup>
+
           <Button color="dark" className='button' style={{marginTop: '2rem'}} block>Report</Button>
         </Form>
       </Container>
-    );
+      : <div>
+      Sorry, you can't update this pet
+      </div>
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user
-});
-
-export default connect(mapStateToProps)(PetsForm);
+export default UpdatePet;
