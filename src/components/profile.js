@@ -29,12 +29,19 @@ class Profile extends Component {
   }
   render () {
     const {results} = this.state;
+
+      var arr = []
+      Object.keys(results).forEach(function(key) {
+
+        arr.push(results[key])
+      });
     return (
       <Container>
-        <PetsView data={results}/>
+        <PetsView data={arr}/>
       </Container>
     )
   }
+
 }
 
 export default Profile;
