@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Dimmer, Loader, Divider, Card } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { URL } from '../constants/index'
 import PetsView from "./PetsView";
 
@@ -15,7 +15,7 @@ class Filter extends Component {
     if (this.props.tag !== null) {
       fetchUrl += '?tag=' + this.props.tag;
     }
-    return window.fetch(`${URL}/pets`)
+    return window.fetch(fetchUrl)
       .then(response => response.json())
       .then(data => this.setState({ results: data}))
       .catch(error => console.log(error))
