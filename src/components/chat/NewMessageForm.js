@@ -30,14 +30,14 @@ class NewMessageForm extends React.Component {
     return (
       <div className="newMessageForm">
         <form onSubmit={this.handleSubmit}>
-          <label>New Message:</label>
+          <label>New message:</label>
           <br />
           <input
             type="text"
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <input type="submit" />
+          <input type="submit" value="Submit"/>
         </form>
       </div>
     );
