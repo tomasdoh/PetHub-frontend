@@ -11,7 +11,7 @@ class Filter extends Component {
   }
 
   componentDidMount() {
-    var fetchUrl = `${URL}/pets`
+    var fetchUrl = `${URL}/pets`;
     if (this.props.tag !== null) {
       fetchUrl += '?tag=' + this.props.tag;
     }
