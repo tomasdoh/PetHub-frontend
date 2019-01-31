@@ -6,7 +6,7 @@ import Pet from './components/Pet';
 import UpdatePet from './components/UpdatePet';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import Profile from './components/Profile';
+import Profile from './components/profile';
 import Router from "react-router/Router";
 import Route from "react-router/Route";
 import Switch from "react-router/Switch";
