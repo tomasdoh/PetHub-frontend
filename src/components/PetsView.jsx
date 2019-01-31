@@ -21,7 +21,7 @@ class PetsView extends Component {
                             key={pet.id}
                             onClick={() => this.routeChange(pet.id)}
                         >
-                            <img src={pet.fileBase64} alt='pet-picture'/>
+                            <img src={pet.fileBase64} alt='pet'/>
                             <div className="ribbon">
                          <span>
                             <p className="ng-binding">{pet.tag}</p>
