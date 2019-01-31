@@ -77,7 +77,7 @@ class PetsForm extends Component {
 
     return (
       <Container className='App'>
-        <h1>Enter your pet information</h1>
+          <h1 className='report-header'>Enter your pet information</h1>
         <Form onSubmit={this.handleSubmit}  className="form" id='petform'>
           <Row form>
             <Col>
