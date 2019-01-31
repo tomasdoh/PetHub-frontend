@@ -1,5 +1,6 @@
 import React from 'react';
 import { URL, HEADERS } from '../../constants';
+import { Form, Button } from 'semantic-ui-react';
 
 class NewConversationForm extends React.Component {
   state = {
@@ -23,16 +24,19 @@ class NewConversationForm extends React.Component {
   render = () => {
     return (
       <div className="newConversationForm">
-        <form onSubmit={this.handleSubmit}>
-          <label>New Conversation:</label>
+      <Form>
+        <Form.Field onSubmit={this.handleSubmit}>
           <br />
+          <p>Start a new conversation:</p>
           <input
             type="text"
             value={this.state.title}
             onChange={this.handleChange}
+            placeholder="Topic"
           />
-          <input type="submit" />
-        </form>
+          </Form.Field>
+          <Button type="submit">Submit</Button>
+        </Form>
       </div>
     );
   };

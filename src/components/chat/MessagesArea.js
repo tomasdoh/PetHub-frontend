@@ -1,13 +1,22 @@
 import React from 'react';
 import NewMessageForm from './NewMessageForm';
+import { Container, Grid } from 'semantic-ui-react';
+import './chat.css'
 
 const MessagesArea = ({
   conversation: { id, title, messages },
 }) => {
   return (
+
     <div className="messagesArea">
       <h2>{title}</h2>
-      <ul>{orderedMessages(messages)}</ul>
+      <Container>
+      <Grid>
+      <Grid.Column>
+      <ul><h4>{orderedMessages(messages)}</h4></ul>
+      </Grid.Column>
+      </Grid>
+      </Container>
       <NewMessageForm conversation_id={id} />
     </div>
   );
