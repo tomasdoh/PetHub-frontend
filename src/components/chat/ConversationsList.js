@@ -4,6 +4,8 @@ import { URL } from '../../constants';
 import NewConversationForm from './NewConversationForm';
 import MessagesArea from './MessagesArea';
 import Cable from './Cables';
+import './chat.css';
+import { Segment, Container, Grid } from 'semantic-ui-react';
 
 class ConversationsList extends React.Component {
   state = {
@@ -52,17 +54,28 @@ class ConversationsList extends React.Component {
             handleReceivedMessage={this.handleReceivedMessage}
           />
         ) : null}
-        <h2>Conversations</h2>
-        <ul>{mapConversations(conversations, this.handleClick)}</ul>
+        <h1>Forum</h1>
+        <h3>Choose a conversation and start chatting!</h3>
+        <Container>
+        <Grid columns={2} stackable>
+          <Grid.Column>
+            <Segment><h2><ul>{mapConversations(conversations, this.handleClick)}</ul></h2></Segment>
+          </Grid.Column>
+          {activeConversation ? (
+            <Grid.Column>
+            <Segment>
+            <MessagesArea
+              conversation={findActiveConversation(
+                conversations,
+                activeConversation
+              )}
+            />
+              </Segment>
+            </Grid.Column>
+          ) : null}
+          </Grid>
         <NewConversationForm />
-        {activeConversation ? (
-          <MessagesArea
-            conversation={findActiveConversation(
-              conversations,
-              activeConversation
-            )}
-          />
-        ) : null}
+        </Container>
       </div>
     );
   };
