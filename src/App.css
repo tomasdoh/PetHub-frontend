@@ -18,14 +18,15 @@ body {
   font-family: 'Dosis', sans-serif;
   font-size: 32px;
   text-align: center;
-  color: white;
+  color: #524f4f;
 }
 .home-main-container {
   padding: 30px;
-  background-color: #7ab5b7;
+  background-color: #ffba35bf;
   border-radius: 15px;
   padding-bottom: 160px;
-  min-height: 100vh;
+  min-height: 50vh;
+  margin-top: 15px;
 }
 .top-navbar {
   background-color: #ea8738 !important;
@@ -39,9 +40,26 @@ body {
 }
 
 .pets-lost-link {
-  font-size: 49px;
+  font-size: 35px;
   text-align: center;
   color:white;
+  margin: 0;
+}
+.home-link{
+  font-size: 25px;
+}
+.lost-link-descr, .found-link-descr{
+  text-align: center;
+}
+
+.lost-btn{
+  float: right;
+  margin-right: 17%;
+}
+
+.found-btn{
+  float: right;
+  margin-right: 2%;
 }
 
 .pets-found-btn{
@@ -52,10 +70,18 @@ body {
   background-color: #559898;
 }
 
+.btn-outline-secondary {
+  width: 332px;
+  height: 100px;
+  border-radius: 25px;
+  border-color: #444337;
+}
+
 .pets-found-link {
-  font-size: 49px;
+  font-size: 35px;
   text-align: center;
   color:white;
+  margin: 0;
 }
 
 .top-navbar .logo {
@@ -244,3 +270,46 @@ div#columns figure figcaption .pet-desc {
 .icon {
   float: right;
 }
+
+.pets-lost-btn {
+  /* margin-top: 43px; */
+  padding: 40px;
+  /* margin-right: 73px; */
+  border-radius: 92px;
+  background-color: #559898;
+  float: left;
+  position: absolute;
+  left: 10%;
+  width: 500px;
+}
+
+.pets-found-btn {
+  /* margin-top: 43px; */
+  padding: 40px;
+  /* margin-right: 73px; */
+  border-radius: 92px;
+  background-color: #559898;
+  float: left;
+  position: absolute;
+  left: 50%;
+  width: 500px;
+}
+
+/*div {*/
+  /*width: 200px;*/
+  /*height: 200px;*/
+  /*display: block;*/
+  /*position: relative;*/
+/*}*/
+
+/*.home-main-container::before {*/
+  /*content: "";*/
+  /*background: url('https://previews.123rf.com/images/alexeyblogoodf/alexeyblogoodf1705/alexeyblogoodf170500116/78613211-seamless-pattern-and-background-with-thin-line-icons-related-to-pets-and-animals-for-pet-shop-websit.jpg');*/
+  /*opacity: 0.5;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*bottom: 0;*/
+  /*right: 0;*/
+  /*position: absolute;*/
+  /*z-index: -1;*/
+/*}*/
