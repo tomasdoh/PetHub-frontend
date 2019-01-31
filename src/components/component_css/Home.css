@@ -1,3 +1,8 @@
-#hoho {
-  color: red
+img {
+  max-width: 1000px;
+  max-height: 459px !important;
+}
+
+.listbox {
+  text-align: center;
 }
