@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Divider, Card } from 'semantic-ui-react';
+import { Container} from 'semantic-ui-react';
 import { withRouter } from 'react-router';
 
 class PetsView extends Component {
