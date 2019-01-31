@@ -1,39 +1,44 @@
 import React, {Component} from 'react';
-import { Container, Divider, Card } from 'semantic-ui-react';
+import { Container} from 'semantic-ui-react';
 import { withRouter } from 'react-router';
 
 class PetsView extends Component {
 
-  routeChange(id){
-    let path = `/pets/${id}`;
-    this.props.history.push(path);
-  }
+    routeChange(id){
+        let path = `/pets/${id}`;
+        this.props.history.push(path);
+    }
 
-  render () {
-    const results = this.props.data;
-    return ( 
-      <Container>
-        <Divider hidden section />
-          {results.length
-             ? <Card.Group itemsPerRow={2}>
-               {results.map(pet => {
-                 return <Card
-                   className='card-container'
-                   key={pet.id}
-                   onClick={() => this.routeChange(pet.id)}
-                   image={pet.fileBase64}
-                   header={'Hi, my name is ' + pet.name}
-                   description={ pet.description}
-                   meta={'Status: ' + pet.tag}
-                 />
-               })}
-             </Card.Group>
-             : <Container textAlign='center'>No Pets found.</Container>
-          }
-        <Divider section />
-      </Container>
-     )
-  }
+    render () {
+        const results = this.props.data;
+        return (
+            <div id="columns">
+                {results.length
+                    ?
+                    results.map(pet => {
+                        return <figure
+                            className=''
+                            key={pet.id}
+                            onClick={() => this.routeChange(pet.id)}
+                        >
+                            <img src={pet.fileBase64} alt='pet'/>
+                            <div className="ribbon">
+                         <span>
+                            <p className="ng-binding">{pet.tag}</p>
+                        </span>
+                            </div>
+                            <figcaption>
+                                <div className="pet-status"></div>
+                                <div>Hi, my name is {pet.name}</div>
+                                <div className="pet-desc">{pet.description}</div>
+                            </figcaption>
+                        </figure>
+                    })
+                    : <Container textAlign='center'>No Pets found.</Container>
+                }
+            </div>
+        )
+    }
 }
 
 export default withRouter(PetsView);

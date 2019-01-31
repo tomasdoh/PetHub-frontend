@@ -8,7 +8,7 @@ class UpdatePet extends Component {
   constructor() {
     super();
     this.state = {};
-    this.getPet = this.getPet.bind(this)
+    this.getPet = this.getPet.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

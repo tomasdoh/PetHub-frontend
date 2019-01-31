@@ -5,10 +5,11 @@ import { URL, HEADERS } from '../constants/index'
 import FileBase64 from 'react-file-base64';
 import connect from "react-redux/es/connect/connect";
 
-function validate(name, file) {
+function validate(name, tag, file) {
   // true means invalid, so our conditions got reversed
   return {
     name: name.length === 0,
+    tag: tag.length ===0,
     file: file.length === 0
   };
 }
@@ -18,14 +19,20 @@ class PetsForm extends Component {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTagChange = this.handleTagChange.bind(this);
     this.state = {
       name: '',
+      tag: '',
       file: '',
     };
   }
 
   handleNameChange(event) {
     this.setState({ name: event.target.value });
+  }
+
+  handleTagChange(event) {
+    this.setState({ tag: event.target.value });
   }
 
   // canBeSubmitted() {
@@ -65,12 +72,12 @@ class PetsForm extends Component {
   }
 
   render() {
-    const errors = validate(this.state.name, this.state.file);
+    const errors = validate(this.state.name, this.state.tag, this.state.file);
     const isDisabled = Object.keys(errors).some(x => errors[x]);
 
     return (
       <Container className='App'>
-        <h1>Enter your pet information</h1>
+          <h1 className='report-header'>Enter your pet information</h1>
         <Form onSubmit={this.handleSubmit}  className="form" id='petform'>
           <Row form>
             <Col>
@@ -86,7 +93,11 @@ class PetsForm extends Component {
             <Col>
               <FormGroup>
                 <Label for="exampleSelect">Status</Label>
-                  <Input type="select" name="tag" id="exampleTag">
+                  <Input  type="select" 
+                          name="tag" id="exampleTag" 
+                          value={this.state.tag} 
+                          onChange={this.handleTagChange} >
+                    <option selected disabled hidden value=''> </option>
                     <option>Lost</option>
                     <option>Found</option>
                 </Input>
