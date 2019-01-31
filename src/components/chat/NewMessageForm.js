@@ -1,5 +1,6 @@
 import React from 'react';
 import { URL, HEADERS } from '../../constants';
+import { Form, Button } from 'semantic-ui-react'
 
 class NewMessageForm extends React.Component {
   state = {
@@ -29,16 +30,16 @@ class NewMessageForm extends React.Component {
   render = () => {
     return (
       <div className="newMessageForm">
-        <form onSubmit={this.handleSubmit}>
-          <label>New Message:</label>
+        <Form onSubmit={this.handleSubmit}>
+          <label>New message:</label>
           <br />
           <input
             type="text"
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <input type="submit" />
-        </form>
+          <Button type="submit" value="Submit"/>
+        </Form>
       </div>
     );
   };
