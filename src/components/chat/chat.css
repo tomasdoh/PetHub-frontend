@@ -1,0 +1,7 @@
+ul {
+  list-style-image: url('./chat_doggy.ico');
+}
+
+h1, h3 {
+  text-align: center;
+}
