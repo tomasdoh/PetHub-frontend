@@ -6,52 +6,54 @@ import connect from "react-redux/es/connect/connect";
 
 class Profile extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      pets: []
-    };
-    this.getPets = this.getPets.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            pets: []
+        };
+        this.getPets = this.getPets.bind(this);
+    }
 
-  fetch(endpoint) {
-    return window.fetch(endpoint)
-      .then(response => response.json())
-      .catch(error => console.log(error))
-  }
+    fetch(endpoint) {
+        return window.fetch(endpoint)
+            .then(response => response.json())
+            .catch(error => console.log(error))
+    }
 
-  componentDidMount() {
-    this.getPets()
-  }
+    componentDidMount() {
+        this.getPets()
+    }
 
-  getPets() {
-    this.fetch(URL + '/pets')
-      .then(data => {
-        this.setState({pets: data});
-      });
-  }
+    getPets() {
+        this.fetch(URL + '/pets')
+            .then(data => {
+                this.setState({pets: data});
+            });
+    }
 
-  render () {
-    const pets = this.state.pets;
-    const users_pet = [];
-    pets.map(pet => {
-      if (pet.user_id === this.props.user.id) {
-        users_pet.push(pet);
-      }
-      return null
-    });
+    render () {
+        const pets = this.state.pets;
+        const users_pet = [];
+        pets.map(pet => {
+            if (pet.user_id === this.props.user.id) {
+                users_pet.push(pet);
+            }
+            return null
+        });
 
-    return (
-      <Container>
-        <PetsView data={users_pet}/>
-      </Container>
-    )
-  }
+        return (
+            <Container>
+                <h1 className='profile-name'>Hi {this.props.user.name}</h1>
+                <h3 className='profile-header-text'>Selecting your post you can edit and delete it at any time</h3>
+                <PetsView data={users_pet}/>
+            </Container>
+        )
+    }
 
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+    user: state.user
 });
 
 export default connect(mapStateToProps)(Profile);
