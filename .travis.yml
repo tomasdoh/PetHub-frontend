@@ -6,7 +6,6 @@ cache:
   - node_modules
 script:
 - npm run build
-- npm test
 deploy:
   provider: heroku
   api_key:
