@@ -24,7 +24,6 @@ Back-end repo (Rails API): http://github.com/tomasdoh/PetHub-backend
 * Images can be uploaded for each listing, stored using Active Storage and Amazon S3.
 * Integration with Google Maps Places, Geocoding and Javascript APIs for form autofill and embedded maps 
 * Chat room feature using Websockets and Action Cable
-* Email/text message alerts *In development*
 
 ## User stories 🐈
 
