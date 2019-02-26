@@ -20,8 +20,8 @@ Back-end repo (Rails API): http://github.com/tomasdoh/PetHub-backend
 
 * Creating, showing, updating and deleting listings for lost and found pets
 * Communicating with the PetHub API via JSON, persisting the data in a PostgreSQL database
-* User authentication using JWT tokens *In development*
-* Images can be uploaded for each listing, stored using Active Storage and Amazon S3.
+* User authentication using JWT tokens
+* Images can be uploaded for each listing, encoded using base64
 * Integration with Google Maps Places, Geocoding and Javascript APIs for form autofill and embedded maps 
 * Chat room feature using Websockets and Action Cable
 
@@ -55,11 +55,11 @@ To optimize the use of Google Map API for geolocation, open the `.env` file and 
 
 ## How to use PetHub 🦄
 
-*User journey and screenshots to be included here*
+
 
 ## Our approach 🦜
 
-*2 day sprints and tracking our learning via a wiki*
+
 
 ## Testing 🐴
 
@@ -92,5 +92,3 @@ PetHub has been deployed using [Heroku](http://heroku.com).
 ## Contributing 🐍
 
 We welcome contributions to the project. Before making a change, please first discuss the contribution you wish to make via issue, email, or any other method with the project team.
-
-## Licence 🐇
