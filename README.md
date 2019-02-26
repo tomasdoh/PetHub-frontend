@@ -1,8 +1,8 @@
-# PetHub 🐾 [![Build Status](https://travis-ci.com/tomasdoh/PetHub-frontend.svg?branch=master)](https://travis-ci.com/tomasdoh/PetHub-frontend)
+# Find My Pet 🐾 [![Build Status](https://travis-ci.com/tomasdoh/PetHub-frontend.svg?branch=master)](https://travis-ci.com/tomasdoh/PetHub-frontend)
 
 ### [Team](https://github.com/githubsttar/PetHub-frontend#team) |  [User stories](https://github.com/githubsttar/PetHub-frontend#user-stories) |  [Getting started](https://github.com/githubsttar/PetHub-frontend#getting-started) |  [How to use](https://github.com/githubsttar/PetHub-frontend#how-to-use-pethub) | [Our approach](https://github.com/githubsttar/PetHub-frontend#our-approach) |   [Testing](https://github.com/githubsttar/PetHub-frontend#testing) |   [Deployment](https://github.com/githubsttar/PetHub-frontend#deployment) |  [Contributing](https://github.com/githubsttar/PetHub-frontend#contributing)
 
-PetHub is an application that helps reunite lost pets with their owners, built using a Rails API and a React.js frontend.
+Find My Pet is an application that helps reunite lost pets with their owners, built using a Rails API and a React.js frontend.
 
 Live site: http://pet-hub.herokuapp.com 🐕🐩🐈🐴
 API: http://pet-hub-api.herokuapp.com 🐍🐠🦜🐇
@@ -53,7 +53,7 @@ To optimize the use of Google Map API for geolocation, open the `.env` file and 
 - Maps JavaScript API
 - Places API
 
-## How to use PetHub 🦄
+## How to use Find My Pet 🦄
 
 
 
@@ -87,7 +87,7 @@ node_modules/.bin/cypress open
 
 ## Deployment 🐩
 
-PetHub has been deployed using [Heroku](http://heroku.com).
+Find My Pet has been deployed using [Heroku](http://heroku.com).
 
 ## Contributing 🐍
 
